@@ -6,21 +6,21 @@
       </h2>
       <div class="grid md:grid-cols-3 gap-12">
         <div class="bg-gray-800 bg-opacity-30 rounded-xl p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service1">
-          <h3 class="text-3xl font-semibold mb-4">Web Development</h3>
+          <h3 class="text-3xl font-semibold mb-4">Frontend Web Development</h3>
           <p class="text-paragraph">
-            Creating responsive, fast, and user-friendly websites using modern technologies like Vue.js, React, and Node.js.
+            Building responsive and modern web applications using HTML, CSS, JavaScript, and frameworks like Laravel for dynamic user experiences.
           </p>
         </div>
         <div class="bg-gray-800 bg-opacity-30 rounded-xl p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service2">
-          <h3 class="text-3xl font-semibold mb-4">UI/UX Design</h3>
+          <h3 class="text-3xl font-semibold mb-4">Flutter Mobile Development</h3>
           <p class="text-paragraph">
-            Designing beautiful and intuitive user interfaces that provide exceptional user experiences across all devices.
+            Creating cross-platform mobile applications with Flutter, delivering native performance and beautiful UI across iOS and Android.
           </p>
         </div>
         <div class="bg-gray-800 bg-opacity-30 rounded-xl p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service3">
-          <h3 class="text-3xl font-semibold mb-4">Performance Optimization</h3>
+          <h3 class="text-3xl font-semibold mb-4">WordPress Development</h3>
           <p class="text-paragraph">
-            Optimizing websites and applications for maximum speed, performance, and search engine visibility.
+            Developing custom WordPress websites and themes, providing content management solutions that are easy to maintain and scale.
           </p>
         </div>
       </div>

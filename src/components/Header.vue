@@ -9,7 +9,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
-            Portfolio
+            Rafly Dev
           </a>
         </div>
         
@@ -90,6 +90,7 @@ export default {
         { name: 'Services', href: '#services' },
         { name: 'Skills', href: '#skills' },
         { name: 'Projects', href: '#projects' },
+        { name: 'Testimonials', href: '#testimonials' },
         { name: 'Contact', href: '#contact' }
       ]
     }

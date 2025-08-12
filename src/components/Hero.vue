@@ -5,13 +5,13 @@
       <div>
         <!-- Large Typography -->
         <h1 class="text-8xl font-extrabold text-headline leading-tight mb-8" ref="headline">
-          Brunao Dev
+          Rafly Dev
         </h1>
         <h2 class="text-4xl font-semibold text-button mb-12" ref="subheadline">
-          Full Stack Developer & UI/UX Designer
+          Frontend Web Developer & Flutter Developer
         </h2>
         <p class="text-xl text-paragraph max-w-3xl mb-16" ref="description">
-          I create stunning digital experiences that users love.
+          I build modern web and mobile applications with Flutter & Laravel, creating seamless user experiences.
         </p>
 
         <!-- CTA Buttons -->

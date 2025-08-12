@@ -28,23 +28,23 @@ export default {
     return {
       projects: [
         {
-          title: 'E-Commerce Platform',
-          description: 'A full-stack e-commerce platform with modern UI and secure payment integration.',
-          technologies: ['Vue.js', 'Node.js', 'MongoDB', '+3'],
+          title: 'Flutter Mobile App',
+          description: 'A cross-platform mobile application built with Flutter, featuring modern UI design and smooth performance.',
+          technologies: ['Flutter', 'Dart', 'Firebase', 'Material Design'],
           liveDemo: '#',
           code: '#'
         },
         {
-          title: 'Task Management App',
-          description: 'A collaborative task management application with real-time updates and team features.',
-          technologies: ['React', 'Firebase', 'Material-UI', '+2'],
+          title: 'Laravel Web Application',
+          description: 'A responsive web application developed with Laravel framework, featuring user authentication and database management.',
+          technologies: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
           liveDemo: '#',
           code: '#'
         },
         {
-          title: 'Weather Mobile App',
-          description: 'A beautiful weather app with location-based forecasts and interactive maps.',
-          technologies: ['React Native', 'Expo', 'Weather API', '+2'],
+          title: 'WordPress Custom Theme',
+          description: 'A custom WordPress theme with responsive design, SEO optimization, and easy content management features.',
+          technologies: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
           liveDemo: '#',
           code: '#'
         }

@@ -5,10 +5,10 @@
         About Me
       </h2>
       <p class="text-xl text-paragraph max-w-3xl mb-8" ref="description">
-        I'm a passionate full-stack developer with over 5 years of experience creating digital solutions that make a difference. I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.
+        Hi I'm Rafly, a passionate junior developer based in Surabaya, Indonesia. I love building web and mobile apps with Flutter & Laravel, designing with Figma. Always excited to learn something new!
       </p>
       <p class="text-xl text-paragraph max-w-3xl" ref="description2">
-        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in continuous learning and staying up-to-date with the latest industry trends.
+        Currently working as a Junior Frontend Web Developer at Yayasan Tangan Pengharapan, where I focus on creating responsive web applications and mobile solutions. I'm always eager to take on new challenges and expand my technical skills.
       </p>
     </div>
   </section>
