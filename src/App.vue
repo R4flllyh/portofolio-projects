@@ -23,9 +23,6 @@
       <!-- Why Choose Me Section -->
       <WhyChooseMe />
       
-      <!-- Process Section -->
-      <Process />
-      
       <!-- Projects Section -->
       <Projects />
       
@@ -49,7 +46,6 @@ import Statistics from './components/Statistics.vue'
 import Services from './components/Services.vue'
 import Skills from './components/Skills.vue'
 import WhyChooseMe from './components/WhyChooseMe.vue'
-import Process from './components/Process.vue'
 import Projects from './components/Projects.vue'
 import Testimonials from './components/Testimonials.vue'
 import Contact from './components/Contact.vue'
@@ -65,7 +61,6 @@ export default {
     Services,
     Skills,
     WhyChooseMe,
-    Process,
     Projects,
     Testimonials,
     Contact,
