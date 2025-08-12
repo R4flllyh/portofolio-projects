@@ -201,11 +201,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Brunao Dev**
+**Rafly**
 - Website: [Your Website](https://yourwebsite.com)
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- GitHub: [Your GitHub](https://github.com/yourusername)
+- Email: Rutherford@gmail.com
+- LinkedIn: https://www.linkedin.com/in/muhammad-rafly-hidayahtullah-806304295/
+- GitHub: https://github.com/R4flllyh/
 
 ---
 
