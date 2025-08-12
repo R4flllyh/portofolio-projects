@@ -37,12 +37,42 @@ export default {
   methods: {
     initAnimations() {
       const gsap = this.$gsap
-      const timeline = gsap.timeline({ defaults: { ease: "power3.out" } })
+      const ScrollTrigger = this.$ScrollTrigger
 
-      timeline.from(this.$refs.headline, { y: 100, opacity: 0, duration: 1 })
-              .from(this.$refs.service1, { y: 50, opacity: 0, duration: 0.8 }, "-=0.5")
-              .from(this.$refs.service2, { y: 50, opacity: 0, duration: 0.8 }, "-=0.6")
-              .from(this.$refs.service3, { y: 50, opacity: 0, duration: 0.8 }, "-=0.6")
+      // Animate headline
+      gsap.fromTo(this.$refs.headline, 
+        { y: 100, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1, 
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: this.$refs.headline,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animate service cards
+      gsap.fromTo([this.$refs.service1, this.$refs.service2, this.$refs.service3], 
+        { y: 50, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: this.$refs.service1,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
     }
   }
 }

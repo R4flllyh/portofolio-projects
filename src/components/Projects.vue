@@ -57,10 +57,42 @@ export default {
   methods: {
     initAnimations() {
       const gsap = this.$gsap
-      const timeline = gsap.timeline({ defaults: { ease: "power3.out" } })
+      const ScrollTrigger = this.$ScrollTrigger
 
-      timeline.from(this.$refs.headline, { y: 100, opacity: 0, duration: 1 })
-              .from(this.$refs.projectCards, { y: 50, opacity: 0, duration: 0.8, stagger: 0.2 }, "-=0.5")
+      // Animate headline
+      gsap.fromTo(this.$refs.headline, 
+        { y: 100, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1, 
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: this.$refs.headline,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animate project cards
+      gsap.fromTo(this.$refs.projectCards, 
+        { y: 50, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          ease: "power3.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: this.$refs.projectCards[0],
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
     }
   }
 }
