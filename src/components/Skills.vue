@@ -56,7 +56,8 @@
                       skill.iconBg,
                       'group-hover:scale-110'
                     ]">
-                      {{ skill.icon }}
+                      <img v-if="skill.imagePath" :src="skill.imagePath" :alt="skill.name" class="w-8 h-8 object-contain rounded-md">
+                      <span v-else>{{ skill.icon }}</span>
                     </div>
                     
                     <!-- Skill Info -->
@@ -145,28 +146,28 @@
               <div class="absolute inset-0 bg-gradient-to-br from-button/5 to-illustration-highlight/5 rounded-2xl blur-3xl animate-pulse"></div>
               
               <!-- Floating Tech Icons -->
-              <div class="absolute top-8 left-8 w-16 h-16 bg-gray-800/90 rounded-2xl border border-blue-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-2xl">🦋</span>
+              <div class="absolute top-8 left-8 w-14 h-14 bg-gray-800/90 rounded-2xl border border-blue-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/flutter-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
               </div>
               
               <div class="absolute top-12 right-12 w-14 h-14 bg-gray-800/90 rounded-2xl border border-red-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-xl">🅻</span>
+                <img src="/src/assets/images/laravel-logo.png" alt="JavaScript" class="w-8 h-8 object-cover">
               </div>
 
-              <div class="absolute bottom-16 left-12 w-15 h-15 bg-gray-800/90 rounded-2xl border border-blue-500/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-xl">🌐</span>
+              <div class="absolute bottom-10 left-12 w-14 h-14 bg-gray-800/90 rounded-2xl border border-blue-500/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/HTML-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
               </div>
 
               <div class="absolute bottom-12 right-16 w-14 h-14 bg-gray-800/90 rounded-2xl border border-yellow-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-xl">⚡</span>
+                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
               </div>
 
               <div class="absolute top-1/2 left-4 w-12 h-12 bg-gray-800/90 rounded-2xl border border-green-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-lg">🎨</span>
+                <img src="/src/assets/images/Figma-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
               </div>
 
               <div class="absolute top-1/2 right-4 w-12 h-12 bg-gray-800/90 rounded-2xl border border-purple-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <span class="text-lg">🗄️</span>
+                <img src="/src/assets/images/MySQL-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
               </div>
 
               <!-- Central Skills Hub -->
@@ -177,11 +178,7 @@
                 
                 <!-- Central Icon -->
                 <div class="relative w-28 h-28 bg-gradient-to-br from-button via-illustration-highlight to-button rounded-full flex items-center justify-center shadow-2xl border-2 border-white/10">
-                  <div class="w-20 h-20 bg-gradient-to-br from-button/90 to-illustration-highlight/90 rounded-full flex items-center justify-center">
-                    <svg class="w-10 h-10 text-buttonText" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
-                    </svg>
-                  </div>
+                  <i class="fi fi-rr-microchip text-5xl text-center"></i>
                 </div>
               </div>
             </div>
@@ -228,6 +225,7 @@ export default {
           experience: 4,
           category: 'Frontend',
           icon: '🌐',
+          imagePath: '/src/assets/images/HTML-logo.png',
           iconBg: 'bg-orange-500/20 text-orange-400',
           progressColor: 'from-orange-500 to-red-500',
           description: 'Expert in semantic HTML5, modern CSS3, Flexbox, Grid, and responsive design principles.',
@@ -238,7 +236,8 @@ export default {
           level: 85,
           experience: 3,
           category: 'Frontend',
-          icon: '⚡',
+          icon: 'JS',
+          imagePath: '/src/assets/images/javascript-logo.png',
           iconBg: 'bg-yellow-500/20 text-yellow-400',
           progressColor: 'from-yellow-500 to-orange-500',
           description: 'Proficient in ES6+, DOM manipulation, async programming, and modern JavaScript frameworks.',
@@ -263,6 +262,7 @@ export default {
           experience: 3,
           category: 'Backend',
           icon: '🐘',
+          imagePath: '/src/assets/images/PHP-logo.png',
           iconBg: 'bg-purple-500/20 text-purple-400',
           progressColor: 'from-purple-500 to-indigo-500',
           description: 'Strong foundation in PHP 8+, OOP principles, and modern PHP development practices.',
@@ -274,6 +274,7 @@ export default {
           experience: 2,
           category: 'Backend',
           icon: '🅻',
+          imagePath: '/src/assets/images/laravel-logo.png',
           iconBg: 'bg-red-500/20 text-red-400',
           progressColor: 'from-red-500 to-pink-500',
           description: 'Building robust web applications with Laravel, Eloquent ORM, and RESTful APIs.',
@@ -287,6 +288,7 @@ export default {
           experience: 2,
           category: 'Mobile',
           icon: '🦋',
+          imagePath: '/src/assets/images/Flutter-logo.png',
           iconBg: 'bg-blue-500/20 text-blue-400',
           progressColor: 'from-blue-500 to-cyan-500',
           description: 'Cross-platform mobile development with Flutter, Dart, and state management solutions.',
@@ -300,6 +302,7 @@ export default {
           experience: 2,
           category: 'Design',
           icon: '🎨',
+          imagePath: '/src/assets/images/Figma-logo.png',
           iconBg: 'bg-pink-500/20 text-pink-400',
           progressColor: 'from-pink-500 to-rose-500',
           description: 'UI/UX design, prototyping, design systems, and collaborative design workflows.',
@@ -311,6 +314,7 @@ export default {
           experience: 4,
           category: 'CMS',
           icon: '🌐',
+          imagePath: '/src/assets/images/Wordpress_Blue_logo.png',
           iconBg: 'bg-blue-600/20 text-blue-300',
           progressColor: 'from-blue-600 to-indigo-600',
           description: 'Custom theme development, plugin creation, and WordPress optimization.',
@@ -324,6 +328,7 @@ export default {
           experience: 3,
           category: 'Database',
           icon: '🗄️',
+          imagePath: '/src/assets/images/MySQL-logo.png',
           iconBg: 'bg-orange-600/20 text-orange-300',
           progressColor: 'from-orange-600 to-red-600',
           description: 'Database design, optimization, complex queries, and performance tuning.',

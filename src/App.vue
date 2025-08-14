@@ -26,9 +26,6 @@
       <!-- Projects Section -->
       <Projects />
       
-      <!-- Testimonials Section -->
-      <Testimonials />
-      
       <!-- Contact Section -->
       <Contact />
     </main>
@@ -47,7 +44,6 @@ import Services from './components/Services.vue'
 import Skills from './components/Skills.vue'
 import WhyChooseMe from './components/WhyChooseMe.vue'
 import Projects from './components/Projects.vue'
-import Testimonials from './components/Testimonials.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 
@@ -62,7 +58,6 @@ export default {
     Skills,
     WhyChooseMe,
     Projects,
-    Testimonials,
     Contact,
     Footer
   },
