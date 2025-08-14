@@ -1,34 +1,34 @@
 <template>
-  <section id="home" class="min-h-screen flex items-center justify-center bg-background px-4 py-24 relative overflow-hidden">
-    <div class="grid lg:grid-cols-2 gap-16 items-center w-full min-w-2xl max-w-7xl">
+  <section id="home" class="min-h-screen flex items-center justify-center bg-background px-4 py-16 md:py-24 relative overflow-hidden">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center w-full min-w-2xl max-w-7xl">
       <!-- Left Column - Content -->
-      <div>
+      <div class="text-center lg:text-left">
         <!-- Large Typography -->
-        <h1 class="text-8xl font-extrabold text-headline leading-tight mb-8" ref="headline">
+        <h1 class="text-5xl md:text-6xl lg:text-8xl font-extrabold text-headline leading-tight mb-6 md:mb-8" ref="headline">
           Rafly Dev
         </h1>
-        <h2 class="text-4xl font-semibold text-button mb-12" ref="subheadline">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-button mb-8 md:mb-12" ref="subheadline">
           Frontend Web Developer & Flutter Developer
         </h2>
-        <p class="text-xl text-paragraph max-w-3xl mb-16" ref="description">
+        <p class="text-lg md:text-xl text-paragraph max-w-3xl mb-12 md:mb-16 mx-auto lg:mx-0" ref="description">
           I build modern web and mobile applications with Flutter & Laravel, creating seamless user experiences.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex space-x-8" ref="buttons">
-          <button class="btn-primary px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform duration-300">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center lg:justify-start" ref="buttons">
+          <button class="btn-primary px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold hover:scale-105 transition-transform duration-300">
             Hire Me
           </button>
-          <button class="btn-secondary px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform duration-300">
+          <button class="btn-secondary px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold hover:scale-105 transition-transform duration-300">
             Download CV
           </button>
         </div>
       </div>
 
       <!-- Right Column - Enhanced Illustration -->
-      <div class="relative flex justify-center items-center" ref="illustration">
+      <div class="relative flex justify-center items-center mt-12 lg:mt-0" ref="illustration">
         <!-- Main Illustration Container -->
-        <div class="relative w-[500px] h-[500px]">
+        <div class="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
           <!-- Background Gradient Circles -->
           <div class="absolute inset-0 bg-gradient-to-br from-button/30 to-illustration-highlight/30 rounded-full blur-3xl animate-pulse"></div>
           <div class="absolute top-8 right-8 w-32 h-32 bg-gradient-to-br from-illustration-highlight/20 to-button/20 rounded-full blur-2xl animate-float"></div>

@@ -1,26 +1,26 @@
 <template>
   <header 
     ref="header"
-    class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300"
-    :class="{ 'shadow-lg': isScrolled }"
+    class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300"
+    :class="{ 'shadow-lg shadow-black/20': isScrolled }"
   >
-    <nav class="px-4 flex justify-center">
-      <div class="flex items-center justify-between h-20 w-full min-w-2xl max-w-7xl">
+    <nav class="px-4 md:px-6 flex justify-center">
+      <div class="flex items-center justify-between h-16 md:h-20 w-full min-w-2xl max-w-7xl">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
+          <a href="#home" class="text-xl md:text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
             Rafly Dev
           </a>
         </div>
         
         <!-- Desktop Navigation -->
         <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-8">
+          <div class="ml-10 flex items-baseline space-x-6 lg:space-x-8">
             <a 
               v-for="item in navItems" 
               :key="item.name"
               :href="item.href" 
-              class="nav-link text-paragraph hover:text-button px-3 py-2 text-sm font-medium transition-colors duration-200"
+              class="nav-link text-paragraph hover:text-button px-3 py-2 text-sm lg:text-base font-medium transition-colors duration-200 relative"
               @click="setActiveLink"
             >
               {{ item.name }}
@@ -32,11 +32,13 @@
         <div class="md:hidden">
           <button
             @click="toggleMobileMenu"
-            class="inline-flex items-center justify-center p-2 rounded-md text-paragraph hover:text-button hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-button transition-colors duration-200"
+            class="inline-flex items-center justify-center p-2 rounded-lg text-paragraph hover:text-button hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-button/50 transition-all duration-200"
+            :class="{ 'bg-gray-800/50 text-button': isMobileMenuOpen }"
           >
+            <span class="sr-only">Open main menu</span>
             <svg 
-              class="h-6 w-6" 
-              :class="{ 'hidden': isMobileMenuOpen, 'block': !isMobileMenuOpen }"
+              class="h-6 w-6 transition-transform duration-200" 
+              :class="{ 'rotate-90 opacity-0': isMobileMenuOpen, 'rotate-0 opacity-100': !isMobileMenuOpen }"
               stroke="currentColor" 
               fill="none" 
               viewBox="0 0 24 24"
@@ -44,8 +46,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <svg 
-              class="h-6 w-6" 
-              :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }"
+              class="h-6 w-6 absolute transition-transform duration-200" 
+              :class="{ 'rotate-0 opacity-100': isMobileMenuOpen, '-rotate-90 opacity-0': !isMobileMenuOpen }"
               stroke="currentColor" 
               fill="none" 
               viewBox="0 0 24 24"
@@ -55,25 +57,42 @@
           </button>
         </div>
       </div>
-      
-      <!-- Mobile Navigation -->
-      <div 
-        class="md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-background border-t border-gray-800"
-        :class="{ 'max-h-64 opacity-100': isMobileMenuOpen, 'max-h-0 opacity-0': !isMobileMenuOpen }"
-      >
-        <div class="px-2 pt-2 pb-3 space-y-1">
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div 
+      class="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
+      :class="{ 
+        'max-h-80 opacity-100 visible': isMobileMenuOpen, 
+        'max-h-0 opacity-0 invisible': !isMobileMenuOpen 
+      }"
+    >
+      <div class="bg-background/95 backdrop-blur-md border-t border-gray-800/50">
+        <div class="px-4 py-3 space-y-1">
           <a 
             v-for="item in navItems" 
             :key="item.name"
             :href="item.href" 
-            class="block px-3 py-2 text-base font-medium text-paragraph hover:text-button hover:bg-gray-800 rounded-md transition-colors duration-200"
+            class="block px-4 py-3 text-base font-medium text-paragraph hover:text-button hover:bg-gray-800/30 rounded-lg transition-all duration-200 border border-transparent hover:border-gray-700/50"
             @click="closeMobileMenu"
           >
-            {{ item.name }}
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-button rounded-full opacity-0 transition-opacity duration-200 hover:opacity-100"></div>
+              <span>{{ item.name }}</span>
+            </div>
           </a>
         </div>
+        
+        <!-- Mobile Menu Footer -->
+        <div class="px-4 py-3 border-t border-gray-800/30">
+          <div class="flex items-center justify-center space-x-4">
+            <div class="text-xs text-paragraph/60">
+              © 2024 Rafly Dev
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </div>
   </header>
 </template>
 

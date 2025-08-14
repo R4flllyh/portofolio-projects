@@ -1,18 +1,18 @@
 <template>
-  <section id="contact" class="section-padding bg-background text-headline px-4 py-24 flex justify-center">
+  <section id="contact" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
       <!-- Section Header -->
-      <div class="text-center mb-16" ref="header">
-        <h2 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
+      <div class="text-center mb-12 md:mb-16" ref="header">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
           Let's Work Together
         </h2>
-        <p class="text-xl text-paragraph max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-paragraph max-w-3xl mx-auto px-4">
           Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something amazing together!
         </p>
       </div>
 
       <!-- Contact Grid -->
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
         <!-- Left Column - Contact Form -->
         <div class="space-y-8" ref="contactForm">
           <!-- Contact Form Card -->

@@ -1,17 +1,17 @@
 <template>
-  <section id="skills" class="section-padding bg-background text-headline px-4 py-24 flex justify-center">
+  <section id="skills" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
       <!-- Section Header -->
-      <div class="text-center mb-16" ref="header">
-        <h2 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
+      <div class="text-center mb-12 md:mb-16" ref="header">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
           My Skills & Expertise
         </h2>
-        <p class="text-xl text-paragraph max-w-3xl mx-auto mb-8">
+        <p class="text-lg md:text-xl text-paragraph max-w-3xl mx-auto mb-6 md:mb-8 px-4">
           I specialize in modern web and mobile development technologies, creating seamless user experiences with clean, efficient code.
         </p>
         
         <!-- Skill Category Filter -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12" ref="filterButtons">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-2" ref="filterButtons">
           <button 
             v-for="category in skillCategories" 
             :key="category"
@@ -29,49 +29,49 @@
       </div>
 
       <!-- Skills Grid -->
-      <div class="grid lg:grid-cols-3 gap-8 items-start">
+      <div class="grid lg:grid-cols-3 gap-6 md:gap-8 items-start">
         <!-- Skills Cards - Now takes 2 columns -->
-        <div class="lg:col-span-2 space-y-8" ref="skillList">
+        <div class="lg:col-span-2 space-y-6 md:space-y-8" ref="skillList">
           <!-- Skills by Category -->
           <div v-for="category in filteredCategories" :key="category" class="space-y-4">
-            <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
-              <div :class="getCategoryIcon(category)" class="w-8 h-8 mr-3"></div>
+            <h3 class="text-xl md:text-2xl font-bold text-headline mb-4 md:mb-6 flex items-center">
+              <div :class="getCategoryIcon(category)" class="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3"></div>
               {{ category }}
-              <div class="flex-1 h-px bg-gradient-to-r from-button/50 to-transparent ml-4"></div>
+              <div class="flex-1 h-px bg-gradient-to-r from-button/50 to-transparent ml-3 md:ml-4"></div>
             </h3>
             
-            <div class="grid gap-4">
+            <div class="grid gap-3 md:gap-4">
               <div 
                 v-for="(skill, index) in getSkillsByCategory(category)" 
                 :key="skill.name"
-                class="group bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-button/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-button/10"
+                class="group bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 hover:border-button/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-button/10"
                 :ref="`skill-${category}-${index}`"
               >
                 <!-- Skill Header -->
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center space-x-4">
+                <div class="flex items-center justify-between mb-3 md:mb-4">
+                  <div class="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
                     <!-- Skill Icon -->
                     <div :class="[
-                      'w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 text-2xl',
+                      'w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl flex items-center justify-center transition-all duration-300 text-xl md:text-2xl flex-shrink-0',
                       skill.iconBg,
                       'group-hover:scale-110'
                     ]">
-                      <img v-if="skill.imagePath" :src="skill.imagePath" :alt="skill.name" class="w-8 h-8 object-contain rounded-md">
+                      <img v-if="skill.imagePath" :src="skill.imagePath" :alt="skill.name" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
                       <span v-else>{{ skill.icon }}</span>
                     </div>
                     
                     <!-- Skill Info -->
-                    <div>
-                      <h4 class="text-xl font-bold text-headline group-hover:text-button transition-colors duration-300">
+                    <div class="min-w-0 flex-1">
+                      <h4 class="text-lg md:text-xl font-bold text-headline group-hover:text-button transition-colors duration-300 truncate">
                         {{ skill.name }}
                       </h4>
-                      <p class="text-sm text-paragraph">{{ skill.experience }} years experience</p>
+                      <p class="text-xs md:text-sm text-paragraph">{{ skill.experience }} years experience</p>
                     </div>
                   </div>
                   
                   <!-- Skill Level Badge -->
-                  <div class="bg-button/10 border border-button/30 rounded-full px-4 py-2 group-hover:bg-button/20 transition-all duration-300">
-                    <span class="text-button font-bold text-lg">{{ skill.level }}%</span>
+                  <div class="bg-button/10 border border-button/30 rounded-full px-3 py-1 md:px-4 md:py-2 group-hover:bg-button/20 transition-all duration-300 flex-shrink-0">
+                    <span class="text-button font-bold text-sm md:text-lg">{{ skill.level }}%</span>
                   </div>
                 </div>
 
@@ -116,69 +116,70 @@
         </div>
 
         <!-- Right Column - Enhanced Stats & Illustration -->
-        <div class="space-y-8" ref="illustration">
+        <div class="space-y-6 md:space-y-8 mt-8 lg:mt-0" ref="illustration">
           <!-- Skills Summary Stats -->
-          <div class="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-            <h3 class="text-xl font-bold text-headline mb-6">Skills Overview</h3>
-            <div class="space-y-4">
+          <div class="bg-gray-800/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50">
+            <h3 class="text-lg md:text-xl font-bold text-headline mb-4 md:mb-6">Skills Overview</h3>
+            <div class="space-y-3 md:space-y-4">
               <div class="flex justify-between items-center">
-                <span class="text-paragraph">Total Skills</span>
-                <span class="text-2xl font-bold text-button">{{ totalSkills }}</span>
+                <span class="text-sm md:text-base text-paragraph">Total Skills</span>
+                <span class="text-xl md:text-2xl font-bold text-button">{{ totalSkills }}</span>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-paragraph">Avg. Experience</span>
-                <span class="text-2xl font-bold text-illustration-highlight">{{ avgExperience }}y</span>
+                <span class="text-sm md:text-base text-paragraph">Avg. Experience</span>
+                <span class="text-xl md:text-2xl font-bold text-illustration-highlight">{{ avgExperience }}y</span>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-paragraph">Expertise Level</span>
-                <span class="text-2xl font-bold text-illustration-secondary">{{ avgLevel }}%</span>
+                <span class="text-sm md:text-base text-paragraph">Expertise Level</span>
+                <span class="text-xl md:text-2xl font-bold text-illustration-secondary">{{ avgLevel }}%</span>
               </div>
             </div>
           </div>
 
           <!-- Technology Stack Visualization -->
-          <div class="relative bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-            <h3 class="text-xl font-bold text-headline mb-6">Tech Stack</h3>
+          <div class="relative bg-gray-800/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50">
+            <h3 class="text-lg md:text-xl font-bold text-headline mb-4 md:mb-6">Tech Stack</h3>
             
             <!-- Central Hub -->
-            <div class="relative w-full h-80 flex items-center justify-center">
+            <div class="relative w-full h-48 md:h-64 lg:h-80 flex items-center justify-center">
               <!-- Background Effects -->
               <div class="absolute inset-0 bg-gradient-to-br from-button/5 to-illustration-highlight/5 rounded-2xl blur-3xl animate-pulse"></div>
               
-              <!-- Floating Tech Icons -->
-              <div class="absolute top-8 left-8 w-14 h-14 bg-gray-800/90 rounded-2xl border border-blue-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/flutter-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
+              <!-- Floating Tech Icons - Mobile Optimized -->
+              <div class="absolute top-4 left-4 md:top-8 md:left-8 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-blue-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/flutter-logo.png" alt="Flutter" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
               </div>
               
-              <div class="absolute top-12 right-12 w-14 h-14 bg-gray-800/90 rounded-2xl border border-red-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/laravel-logo.png" alt="JavaScript" class="w-8 h-8 object-cover">
+              <div class="absolute top-6 right-6 md:top-12 md:right-12 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-red-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/laravel-logo.png" alt="Laravel" class="w-6 h-6 md:w-8 md:h-8 object-cover">
               </div>
 
-              <div class="absolute bottom-10 left-12 w-14 h-14 bg-gray-800/90 rounded-2xl border border-blue-500/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/HTML-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
+              <div class="absolute bottom-6 left-6 md:bottom-10 md:left-12 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-blue-500/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/HTML-logo.png" alt="HTML" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
               </div>
 
-              <div class="absolute bottom-12 right-16 w-14 h-14 bg-gray-800/90 rounded-2xl border border-yellow-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
+              <div class="absolute bottom-8 right-8 md:bottom-12 md:right-16 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-yellow-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
               </div>
 
-              <div class="absolute top-1/2 left-4 w-12 h-12 bg-gray-800/90 rounded-2xl border border-green-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/Figma-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
+              <!-- Side icons - Hidden on small mobile for cleaner look -->
+              <div class="absolute top-1/2 left-2 md:left-4 w-8 h-8 md:w-12 md:h-12 bg-gray-800/90 rounded-lg md:rounded-2xl border border-green-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300 hidden sm:flex">
+                <img src="/src/assets/images/Figma-logo.png" alt="Figma" class="w-5 h-5 md:w-8 md:h-8 object-contain rounded-md">
               </div>
 
-              <div class="absolute top-1/2 right-4 w-12 h-12 bg-gray-800/90 rounded-2xl border border-purple-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/MySQL-logo.png" alt="JavaScript" class="w-8 h-8 object-contain rounded-md">
+              <div class="absolute top-1/2 right-2 md:right-4 w-8 h-8 md:w-12 md:h-12 bg-gray-800/90 rounded-lg md:rounded-2xl border border-purple-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300 hidden sm:flex">
+                <img src="/src/assets/images/MySQL-logo.png" alt="MySQL" class="w-5 h-5 md:w-8 md:h-8 object-contain rounded-md">
               </div>
 
               <!-- Central Skills Hub -->
               <div class="relative">
-                <!-- Rotating Rings -->
-                <div class="absolute inset-0 w-32 h-32 border-2 border-button/20 rounded-full animate-spin-slow"></div>
-                <div class="absolute inset-4 w-24 h-24 border border-illustration-highlight/15 rounded-full animate-reverse-spin"></div>
+                <!-- Rotating Rings - Mobile Optimized -->
+                <div class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 border border-2 border-button/20 rounded-full animate-spin-slow"></div>
+                <div class="absolute inset-3 md:inset-4 w-18 h-18 md:w-24 md:h-24 border border-illustration-highlight/15 rounded-full animate-reverse-spin"></div>
                 
                 <!-- Central Icon -->
-                <div class="relative w-28 h-28 bg-gradient-to-br from-button via-illustration-highlight to-button rounded-full flex items-center justify-center shadow-2xl border-2 border-white/10">
-                  <i class="fi fi-rr-microchip text-5xl text-center"></i>
+                <div class="relative w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-button via-illustration-highlight to-button rounded-full flex items-center justify-center shadow-2xl border border-2 border-white/10">
+                  <i class="fi fi-rr-microchip text-3xl md:text-5xl text-center"></i>
                 </div>
               </div>
             </div>

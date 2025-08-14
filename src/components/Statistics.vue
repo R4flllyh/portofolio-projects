@@ -1,26 +1,26 @@
 <template>
-  <section id="statistics" class="section-padding bg-background text-headline px-4 py-24 flex justify-center">
+  <section id="statistics" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
-      <div class="grid md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div class="text-center" ref="stat1">
-          <div class="text-5xl font-extrabold text-button mb-4">15+</div>
-          <h3 class="text-xl font-semibold mb-2">Projects Completed</h3>
-          <p class="text-paragraph">Successfully delivered web and mobile applications</p>
+          <div class="text-3xl md:text-5xl font-extrabold text-button mb-2 md:mb-4">15+</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">Projects Completed</h3>
+          <p class="text-paragraph text-sm md:text-base">Successfully delivered web and mobile applications</p>
         </div>
         <div class="text-center" ref="stat2">
-          <div class="text-5xl font-extrabold text-button mb-4">8+</div>
-          <h3 class="text-xl font-semibold mb-2">Happy Clients</h3>
-          <p class="text-paragraph">Satisfied clients with quality solutions</p>
+          <div class="text-3xl md:text-5xl font-extrabold text-button mb-2 md:mb-4">8+</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">Happy Clients</h3>
+          <p class="text-paragraph text-sm md:text-base">Satisfied clients with quality solutions</p>
         </div>
         <div class="text-center" ref="stat3">
-          <div class="text-5xl font-extrabold text-button mb-4">2+</div>
-          <h3 class="text-xl font-semibold mb-2">Years Experience</h3>
-          <p class="text-paragraph">Continuous learning and professional growth</p>
+          <div class="text-3xl md:text-5xl font-extrabold text-button mb-2 md:mb-4">2+</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">Years Experience</h3>
+          <p class="text-paragraph text-sm md:text-base">Continuous learning and professional growth</p>
         </div>
         <div class="text-center" ref="stat4">
-          <div class="text-5xl font-extrabold text-button mb-4">24/7</div>
-          <h3 class="text-xl font-semibold mb-2">Support Available</h3>
-          <p class="text-paragraph">Always ready to help and maintain projects</p>
+          <div class="text-3xl md:text-5xl font-extrabold text-button mb-2 md:mb-4">24/7</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-1 md:mb-2">Support Available</h3>
+          <p class="text-paragraph text-sm md:text-base">Always ready to help and maintain projects</p>
         </div>
       </div>
     </div>

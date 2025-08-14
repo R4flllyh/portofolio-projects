@@ -1,22 +1,22 @@
 <template>
-  <section id="about" class="section-padding bg-background text-headline px-4 py-24 flex justify-center">
+  <section id="about" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
       <!-- Section Header -->
-      <div class="text-center mb-16" ref="header">
-        <h2 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
+      <div class="text-center mb-12 md:mb-16" ref="header">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
           About Me
         </h2>
-        <p class="text-xl text-paragraph max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-paragraph max-w-3xl mx-auto px-4">
           Passionate developer crafting digital experiences with modern technologies
         </p>
       </div>
 
       <!-- About Grid -->
-      <div class="grid lg:grid-cols-3 gap-12 items-start">
+      <div class="grid lg:grid-cols-3 gap-8 md:gap-12 items-start">
         <!-- Left Column - Personal Info & Image -->
-        <div class="lg:col-span-1 space-y-8" ref="personalInfo">
+        <div class="lg:col-span-1 space-y-6 md:space-y-8" ref="personalInfo">
           <!-- Profile Card -->
-          <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 text-center">
+          <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 text-center">
             <!-- Profile Image Placeholder -->
             <div class="relative mx-auto mb-6">
               <div class="w-32 h-32 bg-gradient-to-br from-button via-illustration-highlight to-illustration-secondary rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white/10">
@@ -81,10 +81,10 @@
         </div>
 
         <!-- Right Column - Detailed Info -->
-        <div class="lg:col-span-2 space-y-8" ref="detailedInfo">
+        <div class="lg:col-span-2 space-y-6 md:space-y-8 mt-8 lg:mt-0" ref="detailedInfo">
           <!-- About Story -->
-          <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-            <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
+          <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50">
+            <h3 class="text-xl md:text-2xl font-bold text-headline mb-4 md:mb-6 flex items-center">
               <div class="w-8 h-8 bg-gradient-to-br from-illustration-highlight/20 to-button/20 rounded-lg flex items-center justify-center mr-3">
                 <svg class="w-5 h-5 text-illustration-highlight" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
@@ -121,20 +121,30 @@
                 <div class="border-l-2 border-button/30 pl-4">
                   <div class="flex items-center space-x-2 mb-1">
                     <div class="w-2 h-2 bg-button rounded-full"></div>
-                    <span class="text-sm text-button font-semibold">2023 - Present</span>
+                    <span class="text-sm text-button font-semibold">Feb 2025 - Present</span>
                   </div>
-                  <h5 class="font-semibold text-headline">Junior Frontend Developer</h5>
-                  <p class="text-sm text-paragraph">Yayasan Tangan Pengharapan</p>
-                  <p class="text-xs text-paragraph mt-1">Building responsive web applications and mobile solutions</p>
+                  <h5 class="font-semibold text-headline">Junior Frontend Web Developer</h5>
+                  <p class="text-sm text-paragraph">Yayasan Tangan Pengharapan · Magang</p>
+                  <p class="text-xs text-paragraph mt-1">Jakarta Utara, Jakarta Raya, Indonesia · Di lokasi</p>
                 </div>
                 <div class="border-l-2 border-gray-600/30 pl-4">
                   <div class="flex items-center space-x-2 mb-1">
                     <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
-                    <span class="text-sm text-gray-400 font-semibold">2022 - 2023</span>
+                    <span class="text-sm text-gray-400 font-semibold">Mar 2023 - Des 2024</span>
                   </div>
-                  <h5 class="font-semibold text-headline">Freelance Developer</h5>
-                  <p class="text-sm text-paragraph">Self-employed</p>
-                  <p class="text-xs text-paragraph mt-1">Web development and UI/UX design projects</p>
+                  <h5 class="font-semibold text-headline">WordPress Developer</h5>
+                  <p class="text-sm text-paragraph">PT Webcare Digital Indonesia</p>
+                  <p class="text-xs text-paragraph mt-1">Sidoarjo, Jawa Timur, Indonesia · Di lokasi</p>
+                  <p class="text-xs text-paragraph mt-1">1 thn 10 bln</p>
+                </div>
+                <div class="border-l-2 border-gray-600/30 pl-4">
+                  <div class="flex items-center space-x-2 mb-1">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                    <span class="text-sm text-gray-400 font-semibold">Okt 2022 - Mar 2023</span>
+                  </div>
+                  <h5 class="font-semibold text-headline">WordPress Developer</h5>
+                  <p class="text-sm text-paragraph">Freelance</p>
+                  <p class="text-xs text-paragraph mt-1">Magang · 6 bln</p>
                 </div>
               </div>
             </div>
@@ -153,20 +163,11 @@
                 <div class="border-l-2 border-illustration-highlight/30 pl-4">
                   <div class="flex items-center space-x-2 mb-1">
                     <div class="w-2 h-2 bg-illustration-highlight rounded-full"></div>
-                    <span class="text-sm text-illustration-highlight font-semibold">2021 - 2024</span>
+                    <span class="text-sm text-illustration-highlight font-semibold">Jul 2021 - Apr 2024</span>
                   </div>
-                  <h5 class="font-semibold text-headline">Computer Science</h5>
-                  <p class="text-sm text-paragraph">University of Technology</p>
-                  <p class="text-xs text-paragraph mt-1">Focus on Web Development & Software Engineering</p>
-                </div>
-                <div class="border-l-2 border-gray-600/30 pl-4">
-                  <div class="flex items-center space-x-2 mb-1">
-                    <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
-                    <span class="text-sm text-gray-400 font-semibold">2018 - 2021</span>
-                  </div>
-                  <h5 class="font-semibold text-headline">High School</h5>
-                  <p class="text-sm text-paragraph">SMAN 1 Surabaya</p>
-                  <p class="text-xs text-paragraph mt-1">Science Major</p>
+                  <h5 class="font-semibold text-headline">SMK Negeri 1 Surabaya</h5>
+                  <p class="text-sm text-paragraph">Rekayasa Perangkat Lunak</p>
+                  <p class="text-xs text-paragraph mt-1">Software Engineering Major</p>
                 </div>
               </div>
             </div>

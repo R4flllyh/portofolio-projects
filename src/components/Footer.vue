@@ -1,16 +1,16 @@
 <template>
-  <footer class="bg-background border-t border-gray-800 px-4 py-16 flex justify-center">
+  <footer class="bg-background border-t border-gray-800 px-4 py-12 md:py-16 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
-      <div class="grid md:grid-cols-3 gap-12">
+      <div class="grid md:grid-cols-3 gap-8 md:gap-12">
         <!-- Brand Section -->
-        <div>
-          <h3 class="text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent mb-4">
+        <div class="text-center md:text-left">
+          <h3 class="text-xl md:text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent mb-3 md:mb-4">
             Portfolio
           </h3>
-          <p class="text-paragraph mb-6">
+          <p class="text-paragraph text-sm md:text-base mb-4 md:mb-6">
             Creating digital experiences that inspire and engage users worldwide.
           </p>
-          <div class="flex space-x-4">
+          <div class="flex justify-center md:justify-start space-x-4">
             <a href="#" class="text-paragraph hover:text-button transition-colors duration-200">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
