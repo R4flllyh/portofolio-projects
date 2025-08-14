@@ -114,10 +114,14 @@
       </div>
     </div>
 
-    <!-- Background Decorative Elements -->
-    <div class="absolute top-10 right-10 w-24 h-24 bg-button rounded-full opacity-10 animate-float"></div>
-    <div class="absolute bottom-20 left-20 w-32 h-32 bg-illustration-highlight rounded-full opacity-10 animate-float-delayed"></div>
-    <div class="absolute top-1/2 right-1/4 w-16 h-16 bg-paragraph rounded-full opacity-5 animate-float"></div>
+    <!-- Background Decorative Elements with Glassmorphism -->
+    <div class="absolute top-10 right-10 w-24 h-24 bg-button/20 rounded-full blur-2xl opacity-60 animate-float"></div>
+    <div class="absolute bottom-20 left-20 w-32 h-32 bg-illustration-highlight/20 rounded-full blur-3xl opacity-50 animate-float-delayed"></div>
+    <div class="absolute top-1/2 right-1/4 w-16 h-16 bg-paragraph/15 rounded-full blur-xl opacity-40 animate-float"></div>
+    
+    <!-- Additional Glassmorphism Elements -->
+    <div class="absolute top-1/3 left-16 w-20 h-20 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 animate-float-delayed opacity-30"></div>
+    <div class="absolute bottom-1/3 right-20 w-18 h-18 bg-white/3 backdrop-blur-sm rounded-full border border-button/20 animate-float opacity-25"></div>
   </section>
 </template>
 

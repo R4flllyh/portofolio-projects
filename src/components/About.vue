@@ -172,106 +172,112 @@
             </div>
           </div>
 
-          <!-- What I Do -->
-          <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-            <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
-              <div class="w-8 h-8 bg-gradient-to-br from-button/20 to-illustration-secondary/20 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-button" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-                </svg>
-              </div>
-              What I Do
-            </h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="space-y-4">
-                <div class="flex items-start space-x-3">
-                  <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="font-semibold text-headline mb-1">Web Development</h5>
-                    <p class="text-sm text-paragraph">Building responsive and modern web applications using Vue.js, Laravel, and other cutting-edge technologies.</p>
-                  </div>
+
+        </div>
+      </div>
+
+      <!-- What I Do - Full Width Section -->
+      <div class="mt-16" ref="whatIDo">
+        <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+          <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
+            <div class="w-8 h-8 bg-gradient-to-br from-button/20 to-illustration-secondary/20 rounded-lg flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-button" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+              </svg>
+            </div>
+            What I Do
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                  </svg>
                 </div>
-                <div class="flex items-start space-x-3">
-                  <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="font-semibold text-headline mb-1">Mobile Development</h5>
-                    <p class="text-sm text-paragraph">Creating cross-platform mobile applications with Flutter, delivering native performance and beautiful UIs.</p>
-                  </div>
+                <div>
+                  <h5 class="font-semibold text-headline mb-1">Web Development</h5>
+                  <p class="text-sm text-paragraph">Building responsive and modern web applications using Vue.js, Laravel, and other cutting-edge technologies.</p>
                 </div>
               </div>
-              <div class="space-y-4">
-                <div class="flex items-start space-x-3">
-                  <div class="w-10 h-10 bg-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19H19V9Z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="font-semibold text-headline mb-1">UI/UX Design</h5>
-                    <p class="text-sm text-paragraph">Designing intuitive and visually appealing user interfaces with Figma, focusing on user experience and accessibility.</p>
-                  </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"/>
+                  </svg>
                 </div>
-                <div class="flex items-start space-x-3">
-                  <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="font-semibold text-headline mb-1">Problem Solving</h5>
-                    <p class="text-sm text-paragraph">Analyzing complex problems and developing efficient, scalable solutions that meet business requirements.</p>
-                  </div>
+                <div>
+                  <h5 class="font-semibold text-headline mb-1">Mobile Development</h5>
+                  <p class="text-sm text-paragraph">Creating cross-platform mobile applications with Flutter, delivering native performance and beautiful UIs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19H19V9Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h5 class="font-semibold text-headline mb-1">UI/UX Design</h5>
+                  <p class="text-sm text-paragraph">Designing intuitive and visually appealing user interfaces with Figma, focusing on user experience and accessibility.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h5 class="font-semibold text-headline mb-1">Problem Solving</h5>
+                  <p class="text-sm text-paragraph">Analyzing complex problems and developing efficient, scalable solutions that meet business requirements.</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Fun Facts -->
-          <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-            <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
-              <div class="w-8 h-8 bg-gradient-to-br from-illustration-secondary/20 to-button/20 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-illustration-secondary" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22.74L12,19.27L5.82,22.74L7,14L2,9L10.91,8.26L12,2Z"/>
-                </svg>
+      <!-- Fun Facts About Me - Full Width Section -->
+      <div class="mt-16" ref="funFacts">
+        <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+          <h3 class="text-2xl font-bold text-headline mb-6 flex items-center">
+            <div class="w-8 h-8 bg-gradient-to-br from-illustration-secondary/20 to-button/20 rounded-lg flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-illustration-secondary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22.74L12,19.27L5.82,22.74L7,14L2,9L10.91,8.26L12,2Z"/>
+              </svg>
+            </div>
+            Fun Facts About Me
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">☕</span>
+                <span class="text-paragraph">Coffee enthusiast - I code better with good coffee</span>
               </div>
-              Fun Facts About Me
-            </h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="space-y-3">
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">☕</span>
-                  <span class="text-paragraph">Coffee enthusiast - I code better with good coffee</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">🎮</span>
-                  <span class="text-paragraph">Gamer in my free time - strategy games are my favorite</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">📚</span>
-                  <span class="text-paragraph">Always learning - currently exploring AI and machine learning</span>
-                </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">🎮</span>
+                <span class="text-paragraph">Gamer in my free time - strategy games are my favorite</span>
               </div>
-              <div class="space-y-3">
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">🌱</span>
-                  <span class="text-paragraph">Love nature and outdoor activities</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">🎵</span>
-                  <span class="text-paragraph">Music lover - lo-fi beats while coding</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <span class="text-2xl">🚀</span>
-                  <span class="text-paragraph">Dream to work on space technology someday</span>
-                </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">📚</span>
+                <span class="text-paragraph">Always learning - currently exploring AI and machine learning</span>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">🌱</span>
+                <span class="text-paragraph">Love nature and outdoor activities</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">🎵</span>
+                <span class="text-paragraph">Music lover - lo-fi beats while coding</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-2xl">🚀</span>
+                <span class="text-paragraph">Dream to work on space technology someday</span>
               </div>
             </div>
           </div>
@@ -338,6 +344,40 @@ export default {
             ease: "power3.out",
             scrollTrigger: {
               trigger: this.$refs.detailedInfo,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+
+        // Animate What I Do section
+        gsap.fromTo(this.$refs.whatIDo, 
+          { y: 50, opacity: 0 },
+          { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.8, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.whatIDo,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+
+        // Animate Fun Facts section
+        gsap.fromTo(this.$refs.funFacts, 
+          { y: 50, opacity: 0 },
+          { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.8, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: this.$refs.funFacts,
               start: "top 80%",
               end: "bottom 20%",
               toggleActions: "play none none reverse"

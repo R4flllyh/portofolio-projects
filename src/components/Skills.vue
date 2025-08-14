@@ -224,7 +224,7 @@ export default {
         // Frontend Development
         {
           name: 'HTML/CSS',
-          level: 70,
+          level: 95,
           experience: 4,
           category: 'Frontend',
           icon: '🌐',
@@ -235,7 +235,7 @@ export default {
         },
         {
           name: 'JavaScript',
-          level: 50,
+          level: 85,
           experience: 3,
           category: 'Frontend',
           icon: '⚡',
@@ -246,7 +246,7 @@ export default {
         },
         {
           name: 'Vue.js',
-          level: 20,
+          level: 80,
           experience: 2,
           category: 'Frontend',
           icon: '💚',
@@ -259,7 +259,7 @@ export default {
         // Backend Development
         {
           name: 'PHP',
-          level: 60,
+          level: 85,
           experience: 3,
           category: 'Backend',
           icon: '🐘',
@@ -270,7 +270,7 @@ export default {
         },
         {
           name: 'Laravel',
-          level: 60,
+          level: 80,
           experience: 2,
           category: 'Backend',
           icon: '🅻',
@@ -283,7 +283,7 @@ export default {
         // Mobile Development
         {
           name: 'Flutter',
-          level: 50,
+          level: 85,
           experience: 2,
           category: 'Mobile',
           icon: '🦋',
@@ -296,7 +296,7 @@ export default {
         // Design & Tools
         {
           name: 'Figma',
-          level: 100,
+          level: 75,
           experience: 2,
           category: 'Design',
           icon: '🎨',
@@ -307,7 +307,7 @@ export default {
         },
         {
           name: 'WordPress',
-          level: 80,
+          level: 90,
           experience: 4,
           category: 'CMS',
           icon: '🌐',
@@ -316,6 +316,19 @@ export default {
           description: 'Custom theme development, plugin creation, and WordPress optimization.',
           tags: ['Custom Themes', 'Plugins', 'ACF', 'WooCommerce', 'Gutenberg']
         },
+
+        // Database
+        {
+          name: 'MySQL',
+          level: 75,
+          experience: 3,
+          category: 'Database',
+          icon: '🗄️',
+          iconBg: 'bg-orange-600/20 text-orange-300',
+          progressColor: 'from-orange-600 to-red-600',
+          description: 'Database design, optimization, complex queries, and performance tuning.',
+          tags: ['SQL', 'Database Design', 'Optimization', 'Indexing']
+        }
       ]
     }
   },
