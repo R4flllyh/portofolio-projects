@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-background border-t border-gray-800 px-4 py-12 md:py-16 flex justify-center">
-    <div class="w-full min-w-2xl max-w-7xl">
+  <footer class="bg-background border-t border-gray-800 px-4 py-12 md:py-16">
+    <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8 md:gap-12">
         <!-- Brand Section -->
         <div class="text-center md:text-left">

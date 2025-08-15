@@ -167,10 +167,6 @@
                 <img src="/src/assets/images/Figma-logo.png" alt="Figma" class="w-5 h-5 md:w-8 md:h-8 object-contain rounded-md">
               </div>
 
-              <div class="absolute top-1/2 right-2 md:right-4 w-8 h-8 md:w-12 md:h-12 bg-gray-800/90 rounded-lg md:rounded-2xl border border-purple-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300 hidden sm:flex">
-                <img src="/src/assets/images/MySQL-logo.png" alt="MySQL" class="w-5 h-5 md:w-8 md:h-8 object-contain rounded-md">
-              </div>
-
               <!-- Central Skills Hub -->
               <div class="relative">
                 <!-- Rotating Rings - Mobile Optimized -->
@@ -222,7 +218,7 @@ export default {
         // Frontend Development
         {
           name: 'HTML/CSS',
-          level: 95,
+          level: 70,
           experience: 4,
           category: 'Frontend',
           icon: '🌐',
@@ -244,22 +240,22 @@ export default {
           description: 'Proficient in ES6+, DOM manipulation, async programming, and modern JavaScript frameworks.',
           tags: ['ES6+', 'DOM', 'Async/Await', 'Promises', 'APIs']
         },
-        {
-          name: 'Vue.js',
-          level: 80,
-          experience: 2,
-          category: 'Frontend',
-          icon: '💚',
-          iconBg: 'bg-green-500/20 text-green-400',
-          progressColor: 'from-green-500 to-emerald-500',
-          description: 'Building reactive SPAs with Vue 3, Composition API, Vuex/Pinia, and Vue Router.',
-          tags: ['Vue 3', 'Composition API', 'Pinia', 'Vue Router', 'Vite']
-        },
+        // {
+        //   name: 'Vue.js',
+        //   level: 80,
+        //   experience: 2,
+        //   category: 'Frontend',
+        //   icon: '💚',
+        //   iconBg: 'bg-green-500/20 text-green-400',
+        //   progressColor: 'from-green-500 to-emerald-500',
+        //   description: 'Building reactive SPAs with Vue 3, Composition API, Vuex/Pinia, and Vue Router.',
+        //   tags: ['Vue 3', 'Composition API', 'Pinia', 'Vue Router', 'Vite']
+        // },
 
         // Backend Development
         {
           name: 'PHP',
-          level: 85,
+          level: 30,
           experience: 3,
           category: 'Backend',
           icon: '🐘',
@@ -285,7 +281,7 @@ export default {
         // Mobile Development
         {
           name: 'Flutter',
-          level: 85,
+          level: 50,
           experience: 2,
           category: 'Mobile',
           icon: '🦋',
@@ -299,7 +295,7 @@ export default {
         // Design & Tools
         {
           name: 'Figma',
-          level: 75,
+          level: 100,
           experience: 2,
           category: 'Design',
           icon: '🎨',
@@ -307,11 +303,11 @@ export default {
           iconBg: 'bg-pink-500/20 text-pink-400',
           progressColor: 'from-pink-500 to-rose-500',
           description: 'UI/UX design, prototyping, design systems, and collaborative design workflows.',
-          tags: ['UI/UX', 'Prototyping', 'Design Systems', 'Components']
+          tags: ['UI/UX', 'Prototyping', 'Design Systems', 'Components', 'Auto-layout']
         },
         {
           name: 'WordPress',
-          level: 90,
+          level: 70,
           experience: 4,
           category: 'CMS',
           icon: '🌐',
@@ -323,18 +319,6 @@ export default {
         },
 
         // Database
-        {
-          name: 'MySQL',
-          level: 75,
-          experience: 3,
-          category: 'Database',
-          icon: '🗄️',
-          imagePath: '/src/assets/images/MySQL-logo.png',
-          iconBg: 'bg-orange-600/20 text-orange-300',
-          progressColor: 'from-orange-600 to-red-600',
-          description: 'Database design, optimization, complex queries, and performance tuning.',
-          tags: ['SQL', 'Database Design', 'Optimization', 'Indexing']
-        }
       ]
     }
   },
