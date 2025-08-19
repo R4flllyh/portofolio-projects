@@ -2,7 +2,6 @@
   <footer class="bg-background border-t border-gray-800 px-4 py-12 md:py-16">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-        <!-- Brand Section -->
         <div class="text-center md:text-left">
           <h3 class="text-xl md:text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent mb-3 md:mb-4">
             Portfolio
@@ -28,8 +27,6 @@
             </a>
           </div>
         </div>
-
-        <!-- Quick Links -->
         <div>
           <h4 class="text-xl font-semibold text-headline mb-4">Quick Links</h4>
           <ul class="space-y-2">
@@ -40,8 +37,6 @@
             <li><a href="#contact" class="text-paragraph hover:text-button transition-colors duration-200">Contact</a></li>
           </ul>
         </div>
-
-        <!-- Newsletter -->
         <div>
           <h4 class="text-xl font-semibold text-headline mb-4">Stay Updated</h4>
           <p class="text-paragraph mb-4">Subscribe to get the latest updates and insights.</p>
@@ -60,8 +55,6 @@
           </form>
         </div>
       </div>
-
-      <!-- Bottom Section -->
       <div class="border-t border-gray-800 mt-12 pt-8 text-center">
         <p class="text-paragraph">
           © 2024 Portfolio. All rights reserved. Built with Vue.js, Tailwind CSS, and GSAP.

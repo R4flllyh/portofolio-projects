@@ -3,8 +3,8 @@
     <div class="w-full min-w-2xl max-w-7xl">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16" ref="header">
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
-          My Skills & Expertise
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent p-3">
+          Experience that shapes meaningful design
         </h2>
         <p class="text-lg md:text-xl text-paragraph max-w-3xl mx-auto mb-6 md:mb-8 px-4">
           I specialize in modern web and mobile development technologies, creating seamless user experiences with clean, efficient code.
@@ -240,17 +240,7 @@ export default {
           description: 'Proficient in ES6+, DOM manipulation, async programming, and modern JavaScript frameworks.',
           tags: ['ES6+', 'DOM', 'Async/Await', 'Promises', 'APIs']
         },
-        // {
-        //   name: 'Vue.js',
-        //   level: 80,
-        //   experience: 2,
-        //   category: 'Frontend',
-        //   icon: '💚',
-        //   iconBg: 'bg-green-500/20 text-green-400',
-        //   progressColor: 'from-green-500 to-emerald-500',
-        //   description: 'Building reactive SPAs with Vue 3, Composition API, Vuex/Pinia, and Vue Router.',
-        //   tags: ['Vue 3', 'Composition API', 'Pinia', 'Vue Router', 'Vite']
-        // },
+        // Removed commented-out code for Vue.js
 
         // Backend Development
         {

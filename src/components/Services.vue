@@ -39,7 +39,6 @@ export default {
       const gsap = this.$gsap
       const ScrollTrigger = this.$ScrollTrigger
 
-      // Animate headline
       gsap.fromTo(this.$refs.headline, 
         { y: 100, opacity: 0 },
         { 
@@ -56,7 +55,6 @@ export default {
         }
       )
 
-      // Animate service cards
       gsap.fromTo([this.$refs.service1, this.$refs.service2, this.$refs.service3], 
         { y: 50, opacity: 0 },
         { 

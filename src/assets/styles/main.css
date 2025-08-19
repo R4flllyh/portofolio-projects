@@ -31,6 +31,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #ffffff;
+    z-index: 10;
   }
 
   p {
@@ -53,7 +54,7 @@
   }
 
   .btn-primary {
-    background: #ff8906;
+    background: #9cfe4f;
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
@@ -93,6 +94,44 @@
     .section-padding {
       padding: 6rem 0;
     }
+  }
+
+  .hero-section {
+    position: relative;
+    overflow: hidden; /* Ensure the circles don't overflow */
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    width: 500px; /* Adjust size as needed */
+    height: 500px; /* Adjust size as needed */
+    border-radius: 50%;
+    background: #497725; /* Adjust color and opacity */
+    transform: translateY(-50%);
+    filter: blur(100px); /* Adjust blur effect */
+    z-index: 0; /* Behind other content */
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    width: 500px; /* Adjust size as needed */
+    height: 500px; /* Adjust size as needed */
+    border-radius: 50%;
+    background: #7669D6; /* Adjust color and opacity */
+    transform: translateY(-50%);
+    filter: blur(100px); /* Adjust blur effect */
+    z-index: 0; /* Behind other content */
+  }
+
+  .hero-section::before {
+    left: -150px; /* Position to the left */
+  }
+
+  .hero-section::after {
+    right: -150px; /* Position to the right */
   }
 }
 

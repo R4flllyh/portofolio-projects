@@ -7,18 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0f0e17',
-        headline: '#ffffff',
-        paragraph: '#a7a9be',
-        button: '#ff8906',
-        buttonText: '#ffffff',
-        illustration: {
-          stroke: 'black',
-          main: '#ffffff',
-          highlight: '#ff8906',
-          secondary: '#f25f4c',
-          tertiary: '#e53170',
-        },
+        background: '#0a0a0a', // Dark background
+        button: '#00ff00', // Bright green for buttons
+        'illustration-highlight': '#00cc00', // Lighter green for highlights
+        paragraph: '#ffffff', // White for text
+        headline: '#ffffff', // White for headlines
         primary: {
           50: '#f3e8ff',
           100: '#e9d5ff',
