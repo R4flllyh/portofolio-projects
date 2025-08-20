@@ -140,6 +140,12 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  .statistic-section {
+    background-image: url('/src/assets/images/bg-gradient.png');
+    background-size: cover;
+    background-position: center 120px;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Animations */

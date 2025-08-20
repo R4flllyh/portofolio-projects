@@ -1,9 +1,9 @@
 <template>
-  <section id="services" class="section-padding bg-thirdBackground text-headline px-4 py-16 md:py-24 flex justify-center">
+  <section id="services" class="bg-thirdBackground px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
       <div class="mb-12 md:mb-16 flex items-center gap-10" ref="header">
         <h2 class="text-xl md:text-4xl font-normal font-mono">
-          02 - Get to Know Me
+          02 - My Services
         </h2>
         <img id="scramble-cursor" src="https://assets.codepen.io/16327/scramble-cursor.png" alt="" class="w-14 object-contain" />
       </div>

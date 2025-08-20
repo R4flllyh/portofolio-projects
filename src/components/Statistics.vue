@@ -1,5 +1,5 @@
 <template>
-  <section id="statistics" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
+  <section id="statistics" class="bg-background text-headline px-4 py-16 md:py-24 flex justify-center statistic-section">
     <div class="w-full min-w-2xl max-w-7xl">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div class="text-center" ref="stat1">

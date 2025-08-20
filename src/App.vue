@@ -4,18 +4,18 @@
     <Header />
     
     <!-- Main Content -->
-    <main class="space-y-32">
+    <main class="">
       <!-- Hero Section -->
       <Hero />
       
       <!-- About Section -->
-      <About />
+      <About class="mt-32"/>
       
       <!-- Statistics Section -->
-      <Statistics />
+      <Statistics class="mt-32"/>
       
       <!-- Services Section -->
-      <Services />
+      <Services/>
       
       <!-- Skills Section -->
       <Skills />
