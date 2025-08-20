@@ -133,6 +133,13 @@
   .hero-section::after {
     right: -150px; /* Position to the right */
   }
+
+  .about-section {
+    background-image: url('/src/assets/images/bg-about.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Animations */

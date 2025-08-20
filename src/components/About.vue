@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
+  <section id="about" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center about-section">
     <div class="w-full min-w-2xl max-w-7xl">
       <!-- Section Header -->
       <div class="mb-12 md:mb-16 flex items-center gap-10" ref="header">
@@ -24,6 +24,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </section>
 </template>
