@@ -1,15 +1,18 @@
 <template>
   <header 
     ref="header"
-    class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300"
-    :class="{ 'shadow-lg shadow-black/20': isScrolled }"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="{ 
+      'bg-background/95 backdrop-blur-md shadow-black/20': isScrolled,
+      'bg-transparent': !isScrolled
+    }"
   >
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20 max-w-7xl mx-auto">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="#home" class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">
-            Rafly Dev
+          <a href="#home" class="text-lg lg:text-xl font-semibold font-mono">
+            Zkysvern
           </a>
         </div>
         
