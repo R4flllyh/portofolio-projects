@@ -9,11 +9,11 @@
       </div>
       <div class="flex items-end gap-20">
         <div class="">
-          <h2 class="text-xl font-semibold text-button mb-2" ref="subheadline">
-            We are a Creative Agency with over 25 years of experience.
+          <h2 class="text-xl font-semibold mb-2" ref="subheadline">
+            A Software Engineer passionate about building modern and scalable web applications.
           </h2>
           <p class="text-md text-paragraph max-w-3xl mb-10" ref="description">
-            Specializing in delivering cutting-edge digital solutions, including web design.
+            Focused on creating scalable and user-friendly web solutions.
           </p>
           <div class="" ref="buttons">
             <button class="btn-primary px-6 py-3 text-lg font-semibold hover:scale-105 transition-transform duration-300">

@@ -1,23 +1,26 @@
 <template>
-  <section id="services" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
+  <section id="services" class="section-padding bg-secondBackground text-headline px-4 py-16 md:py-24 flex justify-center">
     <div class="w-full min-w-2xl max-w-7xl">
-      <h2 class="text-4xl md:text-6xl font-extrabold mb-8 md:mb-12 max-w-4xl text-center md:text-left" ref="headline">
-        My Services
-      </h2>
+      <div class="mb-12 md:mb-16 flex items-center gap-10" ref="header">
+        <h2 class="text-xl md:text-4xl font-normal font-mono text-black">
+          02 - Get to Know Me
+        </h2>
+        <img id="scramble-cursor" src="https://assets.codepen.io/16327/scramble-cursor.png" alt="" class="w-14 object-contain" />
+      </div>
       <div class="grid md:grid-cols-3 gap-6 md:gap-12">
-        <div class="bg-gray-800 bg-opacity-30 rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service1">
+        <div class="bg-background rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-80 transition duration-300" ref="service1">
           <h3 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Frontend Web Development</h3>
           <p class="text-paragraph text-sm md:text-base">
             Building responsive and modern web applications using HTML, CSS, JavaScript, and frameworks like Laravel for dynamic user experiences.
           </p>
         </div>
-        <div class="bg-gray-800 bg-opacity-30 rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service2">
+        <div class="bg-background rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-80 transition duration-300" ref="service2">
           <h3 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Flutter Mobile Development</h3>
           <p class="text-paragraph text-sm md:text-base">
             Creating cross-platform mobile applications with Flutter, delivering native performance and beautiful UI across iOS and Android.
           </p>
         </div>
-        <div class="bg-gray-800 bg-opacity-30 rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-50 transition duration-300" ref="service3">
+        <div class="bg-background rounded-xl p-6 md:p-8 cursor-pointer hover:bg-opacity-80 transition duration-300" ref="service3">
           <h3 class="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">WordPress Development</h3>
           <p class="text-paragraph text-sm md:text-base">
             Developing custom WordPress websites and themes, providing content management solutions that are easy to maintain and scale.
