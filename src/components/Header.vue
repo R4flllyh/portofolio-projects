@@ -3,7 +3,7 @@
     ref="header"
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     :class="{ 
-      'bg-background/95 backdrop-blur-md shadow-black/20': isScrolled,
+      'bg-background/95 backdrop-blur-md shadow-lg shadow-black/20': isScrolled,
       'bg-transparent': !isScrolled
     }"
   >

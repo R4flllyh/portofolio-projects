@@ -146,6 +146,12 @@
     background-position: center 120px;
     background-repeat: no-repeat;
   }
+  .skills-section {
+    background-image: url('/src/assets/images/bg-gradient.png');
+    background-size: cover;
+    background-position: center -600px;
+    background-repeat: no-repeat;
+  }
 }
 
 /* Animations */

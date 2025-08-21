@@ -1,207 +1,71 @@
 <template>
-  <section id="skills" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center">
+  <section id="skills" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center skills-section">
     <div class="w-full min-w-2xl max-w-7xl">
-      <!-- Section Header -->
-      <div class="text-center mb-12 md:mb-16" ref="header">
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent p-3">
-          Experience that shapes meaningful design
-        </h2>
-        <p class="text-lg md:text-xl text-paragraph max-w-3xl mx-auto mb-6 md:mb-8 px-4">
-          I specialize in modern web and mobile development technologies, creating seamless user experiences with clean, efficient code.
-        </p>
-        
-        <!-- Skill Category Filter -->
-        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-2" ref="filterButtons">
-          <button 
-            v-for="category in skillCategories" 
-            :key="category"
-            @click="activeCategory = category"
-            :class="[
-              'px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2',
-              activeCategory === category 
-                ? 'bg-button text-buttonText border-button shadow-lg shadow-button/25' 
-                : 'bg-transparent text-paragraph border-gray-600 hover:border-button/50 hover:text-button'
-            ]"
-          >
-            {{ category }}
-          </button>
-        </div>
-      </div>
-
-      <!-- Skills Grid -->
-      <div class="grid lg:grid-cols-3 gap-6 md:gap-8 items-start">
-        <!-- Skills Cards - Now takes 2 columns -->
-        <div class="lg:col-span-2 space-y-6 md:space-y-8" ref="skillList">
-          <!-- Skills by Category -->
-          <div v-for="category in filteredCategories" :key="category" class="space-y-4">
-            <h3 class="text-xl md:text-2xl font-bold text-headline mb-4 md:mb-6 flex items-center">
-              <div :class="getCategoryIcon(category)" class="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3"></div>
-              {{ category }}
-              <div class="flex-1 h-px bg-gradient-to-r from-button/50 to-transparent ml-3 md:ml-4"></div>
-            </h3>
+      <!-- Technology Stack Slider -->
+      <div class="flex justify-center">
+        <div class="relative overflow-hidden rounded-2xl py-8 px-12 backdrop-blur-sm shadow-2xl">
+          <!-- Slider Track -->
+          <div class="flex animate-slide-infinite gap-8">
+            <!-- First set of icons -->
+            <div class="flex gap-8 flex-shrink-0">
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Figma-logo.png" alt="Figma" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/25 hover:border-yellow-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 hover:border-orange-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/HTML-logo.png" alt="HTML" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-red-500/25 hover:border-red-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/laravel-logo.png" alt="Laravel" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25 hover:border-blue-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Flutter-logo.png" alt="Flutter" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-blue-600/25 hover:border-blue-500/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Wordpress_Blue_logo.png" alt="WordPress" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+            </div>
             
-            <div class="grid gap-3 md:gap-4">
-              <div 
-                v-for="(skill, index) in getSkillsByCategory(category)" 
-                :key="skill.name"
-                class="group bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50 hover:border-button/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-button/10"
-                :ref="`skill-${category}-${index}`"
-              >
-                <!-- Skill Header -->
-                <div class="flex items-center justify-between mb-3 md:mb-4">
-                  <div class="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
-                    <!-- Skill Icon -->
-                    <div :class="[
-                      'w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl flex items-center justify-center transition-all duration-300 text-xl md:text-2xl flex-shrink-0',
-                      skill.iconBg,
-                      'group-hover:scale-110'
-                    ]">
-                      <img v-if="skill.imagePath" :src="skill.imagePath" :alt="skill.name" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
-                      <span v-else>{{ skill.icon }}</span>
-                    </div>
-                    
-                    <!-- Skill Info -->
-                    <div class="min-w-0 flex-1">
-                      <h4 class="text-lg md:text-xl font-bold text-headline group-hover:text-button transition-colors duration-300 truncate">
-                        {{ skill.name }}
-                      </h4>
-                      <p class="text-xs md:text-sm text-paragraph">{{ skill.experience }} years experience</p>
-                    </div>
-                  </div>
-                  
-                  <!-- Skill Level Badge -->
-                  <div class="bg-button/10 border border-button/30 rounded-full px-3 py-1 md:px-4 md:py-2 group-hover:bg-button/20 transition-all duration-300 flex-shrink-0">
-                    <span class="text-button font-bold text-sm md:text-lg">{{ skill.level }}%</span>
-                  </div>
-                </div>
-
-                <!-- Enhanced Progress Bar -->
-                <div class="relative mb-4">
-                  <div class="w-full h-3 bg-gray-700/50 rounded-full overflow-hidden">
-                    <div 
-                      class="h-full bg-gradient-to-r rounded-full transition-all duration-1500 ease-out relative overflow-hidden"
-                      :class="skill.progressColor"
-                      :style="{ width: skill.level + '%' }"
-                      :ref="`progress-${category}-${index}`"
-                    >
-                      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
-                    </div>
-                  </div>
-                  
-                  <!-- Progress Indicator -->
-                  <div 
-                    class="absolute top-0 h-3 w-1 bg-white rounded-full shadow-lg transition-all duration-1500 ease-out"
-                    :style="{ left: skill.level + '%', transform: 'translateX(-50%)' }"
-                  ></div>
-                </div>
-
-                <!-- Skill Description -->
-                <p class="text-paragraph text-sm mb-4 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                  {{ skill.description }}
-                </p>
-
-                <!-- Skill Tags -->
-                <div class="flex flex-wrap gap-2">
-                  <span 
-                    v-for="tag in skill.tags" 
-                    :key="tag"
-                    class="px-3 py-1 bg-gray-700/50 text-xs text-paragraph rounded-full border border-gray-600/50 group-hover:border-button/30 transition-colors duration-300"
-                  >
-                    {{ tag }}
-                  </span>
-                </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="flex gap-8 flex-shrink-0">
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Figma-logo.png" alt="Figma" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-yellow-500/25 hover:border-yellow-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 hover:border-orange-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/HTML-logo.png" alt="HTML" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-red-500/25 hover:border-red-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/laravel-logo.png" alt="Laravel" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-blue-500/25 hover:border-blue-400/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Flutter-logo.png" alt="Flutter" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded">
+              </div>
+              <div class="group w-32 h-32 bg-gradient-to-br from-gray-800/90 to-gray-900/95 rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-500 border border-gray-600/50 shadow-xl hover:shadow-2xl hover:shadow-blue-600/25 hover:border-blue-500/60 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="/src/assets/images/Wordpress_Blue_logo.png" alt="WordPress" class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300 relative z-10 rounded-full">
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Right Column - Enhanced Stats & Illustration -->
-        <div class="space-y-6 md:space-y-8 mt-8 lg:mt-0" ref="illustration">
-          <!-- Skills Summary Stats -->
-          <div class="bg-gray-800/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50">
-            <h3 class="text-lg md:text-xl font-bold text-headline mb-4 md:mb-6">Skills Overview</h3>
-            <div class="space-y-3 md:space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="text-sm md:text-base text-paragraph">Total Skills</span>
-                <span class="text-xl md:text-2xl font-bold text-button">{{ totalSkills }}</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-sm md:text-base text-paragraph">Avg. Experience</span>
-                <span class="text-xl md:text-2xl font-bold text-illustration-highlight">{{ avgExperience }}y</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-sm md:text-base text-paragraph">Expertise Level</span>
-                <span class="text-xl md:text-2xl font-bold text-illustration-secondary">{{ avgLevel }}%</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Technology Stack Visualization -->
-          <div class="relative bg-gray-800/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-gray-700/50">
-            <h3 class="text-lg md:text-xl font-bold text-headline mb-4 md:mb-6">Tech Stack</h3>
-            
-            <!-- Central Hub -->
-            <div class="relative w-full h-48 md:h-64 lg:h-80 flex items-center justify-center">
-              <!-- Background Effects -->
-              <div class="absolute inset-0 bg-gradient-to-br from-button/5 to-illustration-highlight/5 rounded-2xl blur-3xl animate-pulse"></div>
-              
-              <!-- Floating Tech Icons - Mobile Optimized -->
-              <div class="absolute top-4 left-4 md:top-8 md:left-8 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-blue-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/flutter-logo.png" alt="Flutter" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
-              </div>
-              
-              <div class="absolute top-6 right-6 md:top-12 md:right-12 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-red-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/laravel-logo.png" alt="Laravel" class="w-6 h-6 md:w-8 md:h-8 object-cover">
-              </div>
-
-              <div class="absolute bottom-6 left-6 md:bottom-10 md:left-12 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-blue-500/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/HTML-logo.png" alt="HTML" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
-              </div>
-
-              <div class="absolute bottom-8 right-8 md:bottom-12 md:right-16 w-10 h-10 md:w-14 md:h-14 bg-gray-800/90 rounded-lg md:rounded-2xl border border-yellow-400/40 backdrop-blur-sm animate-float-delayed flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300">
-                <img src="/src/assets/images/javascript-logo.png" alt="JavaScript" class="w-6 h-6 md:w-8 md:h-8 object-contain rounded-md">
-              </div>
-
-              <!-- Side icons - Hidden on small mobile for cleaner look -->
-              <div class="absolute top-1/2 left-2 md:left-4 w-8 h-8 md:w-12 md:h-12 bg-gray-800/90 rounded-lg md:rounded-2xl border border-green-400/40 backdrop-blur-sm animate-float flex items-center justify-center shadow-xl group hover:scale-110 transition-transform duration-300 hidden sm:flex">
-                <img src="/src/assets/images/Figma-logo.png" alt="Figma" class="w-5 h-5 md:w-8 md:h-8 object-contain rounded-md">
-              </div>
-
-              <!-- Central Skills Hub -->
-              <div class="relative">
-                <!-- Rotating Rings - Mobile Optimized -->
-                <div class="absolute inset-0 w-24 h-24 md:w-32 md:h-32 border border-2 border-button/20 rounded-full animate-spin-slow"></div>
-                <div class="absolute inset-3 md:inset-4 w-18 h-18 md:w-24 md:h-24 border border-illustration-highlight/15 rounded-full animate-reverse-spin"></div>
-                
-                <!-- Central Icon -->
-                <div class="relative w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-button via-illustration-highlight to-button rounded-full flex items-center justify-center shadow-2xl border border-2 border-white/10">
-                  <i class="fi fi-rr-microchip text-3xl md:text-5xl text-center"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Timeline -->
-          <div class="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
-            <h3 class="text-xl font-bold text-headline mb-6">Experience Timeline</h3>
-            <div class="space-y-3">
-              <div v-for="year in experienceYears" :key="year.year" class="flex items-center space-x-4">
-                <div class="w-3 h-3 bg-button rounded-full"></div>
-                <div class="flex-1">
-                  <div class="flex justify-between items-center">
-                    <span class="text-paragraph font-medium">{{ year.year }}</span>
-                    <span class="text-sm text-button">{{ year.skills }} skills</span>
-                  </div>
-                  <div class="w-full h-1 bg-gray-700/50 rounded-full mt-1">
-                    <div 
-                      class="h-full bg-gradient-to-r from-button to-illustration-highlight rounded-full transition-all duration-1000"
-                      :style="{ width: (year.skills / maxSkillsPerYear * 100) + '%' }"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+          <!-- Subtle gradient overlays for fade effect -->
+          <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none z-10"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </div>
@@ -210,296 +74,107 @@
 
 <script>
 export default {
-  name: 'Skills',
-  data() {
-    return {
-      activeCategory: 'All',
-      skills: [
-        // Frontend Development
-        {
-          name: 'HTML/CSS',
-          level: 70,
-          experience: 4,
-          category: 'Frontend',
-          icon: '🌐',
-          imagePath: '/src/assets/images/HTML-logo.png',
-          iconBg: 'bg-orange-500/20 text-orange-400',
-          progressColor: 'from-orange-500 to-red-500',
-          description: 'Expert in semantic HTML5, modern CSS3, Flexbox, Grid, and responsive design principles.',
-          tags: ['HTML5', 'CSS3', 'Sass', 'Flexbox', 'Grid', 'Responsive']
-        },
-        {
-          name: 'JavaScript',
-          level: 85,
-          experience: 3,
-          category: 'Frontend',
-          icon: 'JS',
-          imagePath: '/src/assets/images/javascript-logo.png',
-          iconBg: 'bg-yellow-500/20 text-yellow-400',
-          progressColor: 'from-yellow-500 to-orange-500',
-          description: 'Proficient in ES6+, DOM manipulation, async programming, and modern JavaScript frameworks.',
-          tags: ['ES6+', 'DOM', 'Async/Await', 'Promises', 'APIs']
-        },
-        // Removed commented-out code for Vue.js
-
-        // Backend Development
-        {
-          name: 'PHP',
-          level: 30,
-          experience: 3,
-          category: 'Backend',
-          icon: '🐘',
-          imagePath: '/src/assets/images/PHP-logo.png',
-          iconBg: 'bg-purple-500/20 text-purple-400',
-          progressColor: 'from-purple-500 to-indigo-500',
-          description: 'Strong foundation in PHP 8+, OOP principles, and modern PHP development practices.',
-          tags: ['PHP 8+', 'OOP', 'Composer', 'PSR Standards']
-        },
-        {
-          name: 'Laravel',
-          level: 80,
-          experience: 2,
-          category: 'Backend',
-          icon: '🅻',
-          imagePath: '/src/assets/images/laravel-logo.png',
-          iconBg: 'bg-red-500/20 text-red-400',
-          progressColor: 'from-red-500 to-pink-500',
-          description: 'Building robust web applications with Laravel, Eloquent ORM, and RESTful APIs.',
-          tags: ['Laravel 10', 'Eloquent', 'Artisan', 'Blade', 'API']
-        },
-
-        // Mobile Development
-        {
-          name: 'Flutter',
-          level: 50,
-          experience: 2,
-          category: 'Mobile',
-          icon: '🦋',
-          imagePath: '/src/assets/images/Flutter-logo.png',
-          iconBg: 'bg-blue-500/20 text-blue-400',
-          progressColor: 'from-blue-500 to-cyan-500',
-          description: 'Cross-platform mobile development with Flutter, Dart, and state management solutions.',
-          tags: ['Dart', 'Widgets', 'Provider', 'BLoC', 'Firebase']
-        },
-
-        // Design & Tools
-        {
-          name: 'Figma',
-          level: 100,
-          experience: 2,
-          category: 'Design',
-          icon: '🎨',
-          imagePath: '/src/assets/images/Figma-logo.png',
-          iconBg: 'bg-pink-500/20 text-pink-400',
-          progressColor: 'from-pink-500 to-rose-500',
-          description: 'UI/UX design, prototyping, design systems, and collaborative design workflows.',
-          tags: ['UI/UX', 'Prototyping', 'Design Systems', 'Components', 'Auto-layout']
-        },
-        {
-          name: 'WordPress',
-          level: 70,
-          experience: 4,
-          category: 'CMS',
-          icon: '🌐',
-          imagePath: '/src/assets/images/Wordpress_Blue_logo.png',
-          iconBg: 'bg-blue-600/20 text-blue-300',
-          progressColor: 'from-blue-600 to-indigo-600',
-          description: 'Custom theme development, plugin creation, and WordPress optimization.',
-          tags: ['Custom Themes', 'Plugins', 'ACF', 'WooCommerce', 'Gutenberg']
-        },
-
-        // Database
-      ]
-    }
-  },
-  computed: {
-    skillCategories() {
-      const categories = ['All', ...new Set(this.skills.map(skill => skill.category))]
-      return categories
-    },
-    filteredCategories() {
-      if (this.activeCategory === 'All') {
-        return [...new Set(this.skills.map(skill => skill.category))]
-      }
-      return [this.activeCategory]
-    },
-    totalSkills() {
-      return this.skills.length
-    },
-    avgExperience() {
-      const total = this.skills.reduce((sum, skill) => sum + skill.experience, 0)
-      return Math.round(total / this.skills.length * 10) / 10
-    },
-    avgLevel() {
-      const total = this.skills.reduce((sum, skill) => sum + skill.level, 0)
-      return Math.round(total / this.skills.length)
-    },
-    experienceYears() {
-      const years = [2021, 2022, 2023, 2024]
-      return years.map(year => ({
-        year,
-        skills: this.skills.filter(skill => 
-          2024 - skill.experience + 1 <= year
-        ).length
-      }))
-    },
-    maxSkillsPerYear() {
-      return Math.max(...this.experienceYears.map(y => y.skills))
-    }
-  },
-  mounted() {
-    this.initAnimations()
-  },
-  methods: {
-    getSkillsByCategory(category) {
-      return this.skills.filter(skill => skill.category === category)
-    },
-    getCategoryIcon(category) {
-      const icons = {
-        'Frontend': 'bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center text-blue-400',
-        'Backend': 'bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-lg flex items-center justify-center text-purple-400',
-        'Mobile': 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center text-green-400',
-        'Design': 'bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-lg flex items-center justify-center text-pink-400',
-        'CMS': 'bg-gradient-to-br from-blue-600/20 to-indigo-600/20 rounded-lg flex items-center justify-center text-blue-300',
-        'Database': 'bg-gradient-to-br from-orange-600/20 to-red-600/20 rounded-lg flex items-center justify-center text-orange-300'
-      }
-      return icons[category] || 'bg-gray-500/20 rounded-lg flex items-center justify-center text-gray-400'
-    },
-    initAnimations() {
-      // Check if GSAP is available
-      if (typeof this.$gsap !== 'undefined' && typeof this.$ScrollTrigger !== 'undefined') {
-        const gsap = this.$gsap
-        const ScrollTrigger = this.$ScrollTrigger
-
-        // Animate header
-        gsap.fromTo(this.$refs.header, 
-          { y: 50, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
-            duration: 1, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: this.$refs.header,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-
-        // Animate skills list
-        gsap.fromTo(this.$refs.skillList, 
-          { x: -50, opacity: 0 },
-          { 
-            x: 0, 
-            opacity: 1, 
-            duration: 0.8, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: this.$refs.skillList,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-
-        // Animate illustration
-        gsap.fromTo(this.$refs.illustration, 
-          { x: 50, opacity: 0 },
-          { 
-            x: 0, 
-            opacity: 1, 
-            duration: 0.8, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: this.$refs.illustration,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-      }
-    }
-  }
+  name: 'Skills'
 }
 </script>
 
 <style scoped>
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes reverse-spin {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes shine {
+/* Enhanced Slider Animation */
+@keyframes slide-infinite {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-50%);
   }
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+.animate-slide-infinite {
+  animation: slide-infinite 25s linear infinite;
+  will-change: transform;
 }
 
-.animate-float-delayed {
-  animation: float 4s ease-in-out infinite;
-  animation-delay: 2s;
+.animate-slide-infinite:hover {
+  animation-play-state: paused;
 }
 
-.animate-spin-slow {
-  animation: spin-slow 12s linear infinite;
+/* Smooth transitions for all interactive elements */
+.group {
+  position: relative;
+  overflow: hidden;
 }
 
-.animate-reverse-spin {
-  animation: reverse-spin 10s linear infinite;
+.group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: left 0.6s ease;
+  z-index: 5;
 }
 
-.animate-shine {
-  animation: shine 2s ease-in-out infinite;
+.group:hover::before {
+  left: 100%;
 }
 
-/* Custom scrollbar for skill containers */
-.space-y-8::-webkit-scrollbar {
-  width: 4px;
+/* Enhanced shadow effects */
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
 }
 
-.space-y-8::-webkit-scrollbar-track {
-  background: transparent;
+.hover\:shadow-2xl:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
 }
 
-.space-y-8::-webkit-scrollbar-thumb {
-  background: rgba(255, 137, 6, 0.3);
-  border-radius: 2px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-slide-infinite {
+    animation-duration: 20s;
+  }
+  
+  .group {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+  .group img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  
+  .flex.gap-8 {
+    gap: 1.5rem;
+  }
 }
 
-.space-y-8::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 137, 6, 0.5);
+@media (max-width: 640px) {
+  .group {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .group img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .flex.gap-8 {
+    gap: 1rem;
+  }
+}
+
+/* Performance optimizations */
+.animate-slide-infinite {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.group {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 </style>
