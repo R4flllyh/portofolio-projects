@@ -10,8 +10,9 @@ export default {
         background: '#0a0a0a', // Dark background
         secondBackground: '#9cfe4f',
         thirdBackground: '#18191b', // Slightly lighter dark background
-        button: '#00ff00', // Bright green for buttons
-        'illustration-highlight': '#00cc00', // Lighter green for highlights
+        button: '#9cfe4f', // Bright green for buttons
+        'illustration-highlight': '#00cc00',
+        secondButton: '#7669D6', // Lighter green for highlights
         paragraph: '#ffffff', // White for text
         headline: '#ffffff', // White for headlines
         primary: {

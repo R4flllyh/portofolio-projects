@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="min-h-screen bg-background text-headline font-sans">
+  <div id="app" class="min-h-screen bg-background text-headline font-sans min-w-2xl">
     <!-- Header -->
     <Header />
     
@@ -9,10 +9,10 @@
       <Hero />
       
       <!-- About Section -->
-      <About class="mt-32"/>
+      <About class="mt-36"/>
       
       <!-- Statistics Section -->
-      <Statistics class="mt-32"/>
+      <Statistics class="mt-20"/>
       
       <!-- Services Section -->
       <Services/>

@@ -1,41 +1,81 @@
 <template>
-  <section id="home" class="section-padding bg-background text-headline px-4 py-16 md:py-32 flex justify-center hero-section relative overflow-hidden">
+  <section id="home" class="section-padding bg-background text-headline px-4 py-8 sm:py-16 md:py-24 lg:py-32 flex justify-center hero-section relative overflow-hidden">
     <!-- Decorative Flower Element -->
 
-
     <div class="w-full max-w-7xl relative z-20">
-      <div class="flex gap-20 items-center">
-        <div class="flex-1">
-          <h1 class="text-[190px] font-extrabold text-headline leading-tight mb-6" ref="helloText">
+      <!-- Mobile Layout: Stack everything vertically -->
+      <div class="block lg:hidden">
+        <!-- Decorative Element -->
+        <div class="flex mb-1 mt-20 gap-4 items-center">
+          <h1 class="text-6xl sm:text-4xl font-extrabold text-headline leading-tight text-start" ref="helloText">
             <span class="letter" v-for="(letter, index) in helloLetters" :key="index">{{ letter }}</span>
           </h1>
+          <img src="/src/assets/images/element.png" class="w-16 h-16 sm:w-20 sm:h-20 object-contain animate-spin-slow" alt="Decorative Element">
         </div>
-        <div class="flex-shrink-0">
-          <img src="/src/assets/images/element.png" class="w-32 h-32 object-contain animate-spin-slow" alt="Decorative Element">
+        
+        <!-- Name Text -->
+        <div class="mb-6">
+          <h1 class="text-7xl sm:text-6xl font-extrabold text-headline leading-tight text-start" ref="nameText">
+            <span class="letter" v-for="(letter, index) in nameLetters" :key="index">{{ letter }}</span>
+          </h1>
         </div>
-      </div>
-      
-      <div class="flex items-end gap-20 mt-8">
-        <div class="flex-1">
-          <h2 class="text-xl font-semibold mb-4 text-button" ref="subheadline">
+        
+        <!-- Content -->
+        <div class="text-center">
+          <h2 class="text-base sm:text-lg font-semibold mb-3 text-secondBackground text-start" ref="subheadline">
             A Software Engineer passionate about building modern and scalable web applications.
           </h2>
-          <p class="text-lg text-paragraph max-w-3xl mb-10 leading-relaxed" ref="description">
+          <p class="text-sm sm:text-base text-paragraph mb-6 leading-relaxed text-start" ref="description">
             Focused on creating scalable and user-friendly web solutions with modern technologies and best practices.
           </p>
-          <div class="flex gap-4" ref="buttons">
-            <button class="btn-primary px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <div class="flex flex-col gap-3" ref="buttons">
+            <button class="btn-primary px-6 py-3 text-base font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
               Learn More
             </button>
-            <button class="border-2 border-button text-button px-8 py-4 text-lg font-semibold hover:bg-button hover:text-buttonText transition-all duration-300 rounded-lg">
+            <button class="border-2 border-secondButton text-secondButton px-6 py-3 text-base font-semibold hover:bg-secondButton hover:text-white transition-all duration-300 rounded-lg">
               View Projects
             </button>
           </div>
         </div>
-        <div class="flex-shrink-0">
-          <h1 class="text-[210px] font-extrabold text-headline leading-tight text-end" ref="nameText">
-            <span class="letter" v-for="(letter, index) in nameLetters" :key="index">{{ letter }}</span>
-          </h1>
+      </div>
+
+      <!-- Desktop Layout: Original design preserved -->
+      <div class="hidden lg:block">
+        <!-- First Row: Hello Text and Decorative Element -->
+        <div class="flex gap-20 items-center mb-0">
+          <div class="flex-1">
+            <h1 class="text-[140px] xl:text-[190px] font-extrabold text-headline leading-tight" ref="helloText">
+              <span class="letter" v-for="(letter, index) in helloLetters" :key="index">{{ letter }}</span>
+            </h1>
+          </div>
+          <div class="flex-shrink-0">
+            <img src="/src/assets/images/element.png" class="w-32 h-32 object-contain animate-spin-slow" alt="Decorative Element">
+          </div>
+        </div>
+        
+        <!-- Second Row: Content and Name -->
+        <div class="flex items-end gap-20 mt-8">
+          <div class="flex-1">
+            <h2 class="text-xl font-semibold mb-4 text-secondBackground" ref="subheadline">
+              A Software Engineer passionate about building modern and scalable web applications.
+            </h2>
+            <p class="text-lg text-paragraph max-w-3xl mb-10 leading-relaxed" ref="description">
+              Focused on creating scalable and user-friendly web solutions with modern technologies and best practices.
+            </p>
+            <div class="flex gap-4" ref="buttons">
+              <button class="btn-primary px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Learn More
+              </button>
+              <button class="border-2 border-secondButton text-secondButton px-8 py-4 text-lg font-semibold hover:bg-secondButton hover:text-white transition-all duration-300 rounded-lg">
+                View Projects
+              </button>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <h1 class="text-[160px] xl:text-[210px] font-extrabold text-headline leading-tight text-end" ref="nameText">
+              <span class="letter" v-for="(letter, index) in nameLetters" :key="index">{{ letter }}</span>
+            </h1>
+          </div>
         </div>
       </div>
     </div>
@@ -248,48 +288,31 @@ export default {
   box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
-/* Responsive text sizing */
-@media (max-width: 768px) {
-  .text-\[190px\] {
-    font-size: 80px;
-  }
-  .text-\[210px\] {
-    font-size: 90px;
+/* Enhanced responsive styles for better mobile experience */
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
-  .flower-container {
-    width: 80px;
-    height: 80px;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .petal {
-    width: 20px;
-    height: 40px;
-  }
-  
-  .flower-center {
-    width: 12px;
-    height: 12px;
+  .letter {
+    display: inline-block;
+    transition: all 0.3s ease;
   }
 }
 
-@media (max-width: 640px) {
-  .text-\[190px\] {
-    font-size: 60px;
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
-  .text-\[210px\] {
-    font-size: 70px;
-  }
-  
-  .flex.gap-20 {
-    gap: 2rem;
-    flex-direction: column;
-  }
-  
-  .flower-container {
-    display: none;
+}
+
+/* Ensure proper text wrapping on very small screens */
+@media (max-width: 360px) {
+  .hero-section .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 </style>

@@ -97,41 +97,11 @@
   }
 
   .hero-section {
+    background-image: url('/src/assets/images/Gloss.png'), url('/src/assets/images/Gloss-2.png');
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
     position: relative;
     overflow: hidden; /* Ensure the circles don't overflow */
-  }
-
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    width: 500px; /* Adjust size as needed */
-    height: 500px; /* Adjust size as needed */
-    border-radius: 50%;
-    background: #497725; /* Adjust color and opacity */
-    transform: translateY(-50%);
-    filter: blur(100px); /* Adjust blur effect */
-    z-index: 0; /* Behind other content */
-  }
-  .hero-section::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    width: 500px; /* Adjust size as needed */
-    height: 500px; /* Adjust size as needed */
-    border-radius: 50%;
-    background: #7669D6; /* Adjust color and opacity */
-    transform: translateY(-50%);
-    filter: blur(100px); /* Adjust blur effect */
-    z-index: 0; /* Behind other content */
-  }
-
-  .hero-section::before {
-    left: -150px; /* Position to the left */
-  }
-
-  .hero-section::after {
-    right: -150px; /* Position to the right */
   }
 
   .about-section {
@@ -141,16 +111,46 @@
     background-repeat: no-repeat;
   }
   .statistic-section {
-    background-image: url('/src/assets/images/bg-gradient.png');
-    background-size: cover;
-    background-position: center 120px;
+    background-image: url('/src/assets/images/Text-bg.png');
+    background-size: contain;
+    background-position: center 50px;
     background-repeat: no-repeat;
   }
-  .skills-section {
-    background-image: url('/src/assets/images/bg-gradient.png');
-    background-size: cover;
-    background-position: center -600px;
+
+  #services {
+    background-image: 
+      url('/src/assets/images/linear-gradient.png'),
+      url('/src/assets/images/Icosahedron.png');
+    background-size: contain, 300px;   /* ukuran masing-masing image */
+    background-position: bottom left, top right; /* posisi masing-masing image */
+    background-repeat: no-repeat, no-repeat;  /* repeat untuk masing-masing */
+  }
+
+  .helix {
+    background-image: url('/src/assets/images/helix.png'), url('/src/assets/images/Thorus.png');
+    background-size: 300px;
+    background-position: top left, bottom right;
     background-repeat: no-repeat;
+  }
+
+  .helix-2 {
+    background-image: url('/src/assets/images/Cylinder.png');
+    background-size: 300px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  .helix-3 {
+    background-image: url('/src/assets/images/Sphere.png');
+    background-size: 300px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+
+
+  .bg-whyChooseMe {
+    background-image: url('/src/assets/images/container.png');
+    background-size: cover;
+    background-position: center;
   }
 }
 

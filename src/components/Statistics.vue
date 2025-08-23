@@ -1,96 +1,26 @@
 <template>
-  <section id="statistics" class="bg-thirdBackground text-headline px-4 py-16 md:py-24 flex justify-center statistics-section relative overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-10 left-10 w-32 h-32 bg-button/20 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-10 right-10 w-40 h-40 bg-illustration-highlight/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    </div>
-
-    <div class="w-full min-w-2xl max-w-7xl relative z-10">
-
-      <!-- Statistics Grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <!-- Stat 1: Projects Completed -->
-        <div class="stat-card group" ref="stat1">
-          <div class="stat-icon">
-            <svg class="w-8 h-8 text-button" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-            </svg>
+  <section id="statistics" class="bg-background text-headline px-4 py-16 md:py-36 flex justify-center statistic-section">
+    <div class="w-full min-w-2xl max-w-7xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div 
+          v-for="(stat, index) in statistics" 
+          :key="stat.id"
+          class="stat-card text-center group"
+          :ref="`stat${index + 1}`"
+        >
+          <div class="stat-number" ref="numberElement">
+            {{ stat.number }}
           </div>
-          <div class="stat-number" data-target="15">0</div>
-          <div class="stat-suffix">+</div>
-          <h3 class="stat-title">Projects Completed</h3>
-          <p class="stat-description">Successfully delivered web and mobile applications with modern technologies</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 85%;"></div>
-          </div>
-        </div>
-
-        <!-- Stat 2: Happy Clients -->
-        <div class="stat-card group" ref="stat2">
-          <div class="stat-icon">
-            <svg class="w-8 h-8 text-button" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="8">0</div>
-          <div class="stat-suffix">+</div>
-          <h3 class="stat-title">Happy Clients</h3>
-          <p class="stat-description">Satisfied clients with quality solutions and excellent communication</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 95%;"></div>
-          </div>
-        </div>
-
-        <!-- Stat 3: Years Experience -->
-        <div class="stat-card group" ref="stat3">
-          <div class="stat-icon">
-            <svg class="w-8 h-8 text-button" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
-              <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="2">0</div>
-          <div class="stat-suffix">+</div>
-          <h3 class="stat-title">Years Experience</h3>
-          <p class="stat-description">Continuous learning and professional growth in web development</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 70%;"></div>
-          </div>
-        </div>
-
-        <!-- Stat 4: Code Commits -->
-        <div class="stat-card group" ref="stat4">
-          <div class="stat-icon">
-            <svg class="w-8 h-8 text-button" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
-            </svg>
-          </div>
-          <div class="stat-number" data-target="500">0</div>
-          <div class="stat-suffix">+</div>
-          <h3 class="stat-title">Code Commits</h3>
-          <p class="stat-description">Lines of code written and committed to various projects</p>
-          <div class="stat-progress">
-            <div class="stat-progress-bar" style="width: 80%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Additional Info -->
-      <div class="text-center mt-12 md:mt-16" ref="additionalInfo">
-        <div class="bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 max-w-4xl mx-auto">
-          <h3 class="text-xl md:text-2xl font-semibold text-headline mb-4">
-            Always Growing, Always Learning
+          <h3 class="stat-title">
+            {{ stat.title }}
           </h3>
-          <p class="text-paragraph leading-relaxed">
-            These numbers represent my journey so far, but I'm always looking forward to new challenges and opportunities. 
-            Every project teaches me something new, and every client interaction helps me grow as a developer and professional.
+          <p class="stat-description">
+            {{ stat.description }}
           </p>
-          <div class="flex justify-center mt-6">
-            <div class="flex items-center space-x-2 text-button">
-              <div class="w-2 h-2 bg-button rounded-full animate-pulse"></div>
-              <span class="text-sm font-medium">Currently available for new projects</span>
-            </div>
+          
+          <!-- Decorative elements -->
+          <div class="stat-decoration">
+            <div class="stat-glow"></div>
           </div>
         </div>
       </div>
@@ -101,94 +31,114 @@
 <script>
 export default {
   name: 'Statistics',
+  data() {
+    return {
+      statistics: [
+        {
+          id: 'projects',
+          number: '15+',
+          title: 'Projects Completed',
+          description: 'Successfully delivered web and mobile applications',
+          countTo: 15
+        },
+        {
+          id: 'clients',
+          number: '8+',
+          title: 'Happy Clients',
+          description: 'Satisfied clients with quality solutions',
+          countTo: 8
+        },
+        {
+          id: 'experience',
+          number: '2+',
+          title: 'Years Experience',
+          description: 'Continuous learning and professional growth',
+          countTo: 2
+        },
+        {
+          id: 'support',
+          number: '24/7',
+          title: 'Support Available',
+          description: 'Always ready to help and maintain projects',
+          countTo: null // Special case for 24/7
+        }
+      ]
+    }
+  },
   mounted() {
     this.initAnimations()
   },
   methods: {
     initAnimations() {
-      // Check if GSAP is available
       if (typeof this.$gsap !== 'undefined' && typeof this.$ScrollTrigger !== 'undefined') {
         const gsap = this.$gsap
         const ScrollTrigger = this.$ScrollTrigger
 
-        // Animate header
-        gsap.fromTo(this.$refs.header, 
-          { y: 50, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
-            duration: 1, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: this.$refs.header,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-
         // Animate statistics cards
-        gsap.fromTo([this.$refs.stat1, this.$refs.stat2, this.$refs.stat3, this.$refs.stat4], 
-          { y: 50, opacity: 0 },
+        const statRefs = this.statistics.map((_, index) => this.$refs[`stat${index + 1}`]).flat()
+        
+        gsap.fromTo(statRefs, 
+          { 
+            y: 60, 
+            opacity: 0,
+            scale: 0.8
+          },
           { 
             y: 0, 
-            opacity: 1, 
+            opacity: 1,
+            scale: 1,
             duration: 0.8, 
-            ease: "power3.out",
-            stagger: 0.2,
+            ease: "back.out(1.7)",
+            stagger: 0.15,
             scrollTrigger: {
-              trigger: this.$refs.stat1,
-              start: "top 80%",
-              end: "bottom 20%",
+              trigger: statRefs[0],
+              start: "top 85%",
               toggleActions: "play none none reverse",
               onEnter: () => this.animateNumbers()
             }
           }
         )
 
-        // Animate additional info
-        gsap.fromTo(this.$refs.additionalInfo, 
-          { y: 30, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
-            duration: 0.8, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: this.$refs.additionalInfo,
-              start: "top 90%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse"
-            }
+        // Add hover animations
+        statRefs.forEach((ref, index) => {
+          if (ref) {
+            ref.addEventListener('mouseenter', () => {
+              gsap.to(ref.querySelector('.stat-glow'), {
+                scale: 1.2,
+                opacity: 0.6,
+                duration: 0.3,
+                ease: "power2.out"
+              })
+            })
+
+            ref.addEventListener('mouseleave', () => {
+              gsap.to(ref.querySelector('.stat-glow'), {
+                scale: 1,
+                opacity: 0.3,
+                duration: 0.3,
+                ease: "power2.out"
+              })
+            })
           }
-        )
+        })
       }
     },
+
     animateNumbers() {
-      const numberElements = document.querySelectorAll('.stat-number')
-      
-      numberElements.forEach(element => {
-        const target = parseInt(element.getAttribute('data-target'))
+      this.statistics.forEach((stat, index) => {
+        const element = this.$refs[`stat${index + 1}`]?.[0]?.querySelector('.stat-number')
+        if (!element || stat.countTo === null) return
+
         let current = 0
-        const increment = target / 50 // Adjust speed here
-        
+        const increment = stat.countTo / 30
         const timer = setInterval(() => {
           current += increment
-          if (current >= target) {
-            current = target
+          if (current >= stat.countTo) {
+            current = stat.countTo
             clearInterval(timer)
           }
-          element.textContent = Math.floor(current)
-        }, 30)
-      })
-
-      // Animate progress bars
-      const progressBars = document.querySelectorAll('.stat-progress-bar')
-      progressBars.forEach((bar, index) => {
-        setTimeout(() => {
-          bar.style.transform = 'scaleX(1)'
-        }, index * 200)
+          element.textContent = Math.floor(current) + '+'
+        }, 50)
       })
     }
   }
@@ -196,84 +146,45 @@ export default {
 </script>
 
 <style scoped>
-/* Statistics Card Styles */
+/* Stat Card Base Styles */
 .stat-card {
-  background-color: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(4px);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  text-align: center;
-  border: 1px solid rgba(63, 63, 70, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
   position: relative;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.3), rgba(17, 24, 39, 0.5));
+  border: 1px solid rgba(63, 63, 70, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   overflow: hidden;
 }
 
 .stat-card:hover {
-  border-color: rgba(0, 255, 0, 0.5);
-  transform: translateY(-0.5rem);
-  box-shadow: 0 25px 50px -12px rgba(0, 255, 0, 0.1);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(156, 254, 79, 0.4);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(156, 254, 79, 0.1);
 }
 
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00ff00, transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.stat-card:hover::before {
-  transform: translateX(100%);
-}
-
-.stat-icon {
-  width: 4rem;
-  height: 4rem;
-  background-color: rgba(0, 255, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem auto;
-  transition: all 0.3s ease;
-}
-
-.group:hover .stat-icon {
-  background-color: rgba(0, 255, 0, 0.2);
-  transform: scale(1.1);
-}
-
+/* Stat Number */
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: #00ff00;
-  margin-bottom: 0.25rem;
-  font-family: 'Courier New', monospace;
-  transition: transform 0.3s ease;
+  color: #9cfe4f;
+  margin-bottom: 1rem;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(156, 254, 79, 0.3);
+  transition: all 0.3s ease;
 }
 
 .group:hover .stat-number {
   transform: scale(1.1);
+  text-shadow: 0 0 30px rgba(156, 254, 79, 0.5);
 }
 
-.stat-suffix {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: rgba(0, 255, 0, 0.7);
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.group:hover .stat-suffix {
-  color: #00ff00;
-}
-
+/* Stat Title */
 .stat-title {
   font-size: 1.125rem;
   font-weight: 600;
@@ -283,112 +194,155 @@ export default {
 }
 
 .group:hover .stat-title {
-  color: #00ff00;
+  color: #9cfe4f;
 }
 
+/* Stat Description */
 .stat-description {
-  color: #ffffff;
   font-size: 0.875rem;
-  line-height: 1.625;
-  margin-bottom: 1rem;
+  color: #a7a9be;
+  line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
-.stat-progress {
+.group:hover .stat-description {
+  color: #ffffff;
+}
+
+/* Decorative Elements */
+.stat-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stat-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(156, 254, 79, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+/* Shimmer Effect */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
-  height: 0.25rem;
-  background-color: rgba(63, 63, 70, 0.5);
-  border-radius: 9999px;
-  overflow: hidden;
-}
-
-.stat-progress-bar {
   height: 100%;
-  background: linear-gradient(to right, #00ff00, #00cc00);
-  border-radius: 9999px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1s ease-out;
+  background: linear-gradient(90deg, transparent, rgba(156, 254, 79, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
 }
 
-/* Background Animation */
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-}
-
-.animate-float-slow {
-  animation: float-slow 6s ease-in-out infinite;
-}
-
-/* Pulse Animation */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.3;
-  }
+.stat-card:hover::before {
+  left: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .stat-card {
-    padding: 1rem;
-  }
-  
-  .stat-card:hover {
-    transform: translateY(0);
-  }
-  
-  .stat-icon {
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 0.75rem;
+    padding: 1.5rem 0.75rem;
   }
   
   .stat-number {
-    font-size: 1.875rem;
-  }
-  
-  .stat-suffix {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
   }
   
   .stat-title {
     font-size: 1rem;
+    margin-bottom: 0.25rem;
   }
   
   .stat-description {
     font-size: 0.75rem;
   }
+  
+  .stat-glow {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media (max-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
   .stat-card {
-    padding: 2rem;
+    padding: 1rem 0.5rem;
   }
   
   .stat-number {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
-  .stat-suffix {
-    font-size: 1.875rem;
+  .stat-title {
+    font-size: 0.875rem;
+  }
+  
+  .stat-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Performance Optimizations */
+.stat-card {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card {
+    transition-duration: 0.2s;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .stat-number,
+  .stat-title,
+  .stat-description {
+    transition-duration: 0.2s;
+  }
+}
+
+/* Focus states */
+.stat-card:focus {
+  outline: 2px solid #9cfe4f;
+  outline-offset: 2px;
+}
+
+/* Enhanced visual effects */
+.stat-card:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.7));
+}
+
+/* Grid enhancements */
+@media (min-width: 768px) {
+  .stat-number {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-number {
+    font-size: 4rem;
   }
   
   .stat-title {
     font-size: 1.25rem;
+  }
+  
+  .stat-description {
+    font-size: 1rem;
   }
 }
 </style>

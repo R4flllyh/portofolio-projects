@@ -6,23 +6,29 @@
         <h2 class="text-xl md:text-4xl font-normal font-mono">
           01 - Get to Know Me
         </h2>
-        <img id="scramble-cursor" src="https://assets.codepen.io/16327/scramble-cursor.png" alt="" class="w-14 object-contain" />
+        <img 
+          id="scramble-cursor" 
+          src="https://assets.codepen.io/16327/scramble-cursor.png" 
+          alt="Decorative cursor" 
+          class="w-14 object-contain animate-pulse" 
+        />
       </div>
 
       <!-- About Content -->
       <div class="max-w-4xl relative">
         <!-- Decorative Element -->
-        <div class="absolute -top-8 -right-8 md:-top-12 md:-right-12 z-10">
+        <div class="absolute -top-8 -right-8 md:-top-12 md:-right-16 z-10">
           <div class="flower-decoration"></div>
         </div>
+        
         <!-- Main Content Card -->
-        <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 relative z-20">
+        <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-gray-700/50 relative z-20 hover:bg-gray-800/60 hover:transform hover:-translate-y-1 transition-all duration-300">
           <div class="space-y-6 text-white leading-relaxed">
-            <p class="text-4xl text-white mb-5" ref="scrambleText">
-              Hi! I’m Rafly, a passionate junior developer based in Surabaya, Indonesia.
+            <p class="text-2xl sm:text-3xl lg:text-4xl text-white mb-5 font-medium" ref="scrambleText">
+              Hi! I'm Rafly, a passionate junior developer based in Surabaya, Indonesia.
               I love building web and mobile applications with Flutter & Laravel, designing clean interfaces with Tailwind, and exploring UI/UX using Figma.
             </p>
-            <p class="text-lg">
+            <p class="text-base sm:text-lg text-paragraph leading-relaxed">
               I enjoy turning ideas into functional products and am always excited to collaborate and learn something new.
             </p>
           </div>
@@ -41,50 +47,61 @@ export default {
   },
   methods: {
     initAnimations() {
-      // Check if GSAP is available
       if (typeof this.$gsap !== 'undefined' && typeof this.$ScrollTrigger !== 'undefined') {
         const gsap = this.$gsap
         const ScrollTrigger = this.$ScrollTrigger
 
-        // Animate header
+        // Header animation
         gsap.fromTo(this.$refs.header, 
-          { y: 50, opacity: 0 },
+          { y: -30, opacity: 0 },
           { 
             y: 0, 
             opacity: 1, 
-            duration: 1, 
+            duration: 0.8, 
             ease: "power3.out",
             scrollTrigger: {
               trigger: this.$refs.header,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+
+        // Content card animation
+        gsap.fromTo('.bg-gray-800\\/40', 
+          { y: 50, opacity: 0, scale: 0.95 },
+          { 
+            y: 0, 
+            opacity: 1, 
+            scale: 1,
+            duration: 1, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: '.bg-gray-800\\/40',
               start: "top 80%",
-              end: "bottom 20%",
               toggleActions: "play none none reverse"
             }
           }
         )
       }
     },
+
     initScrambleText() {
       const element = this.$refs.scrambleText
       if (!element) return
 
       const originalText = element.textContent
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?'
+      const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?'
       let iteration = 0
 
-      // Wait for next tick to ensure element is fully rendered with text-4xl
       this.$nextTick(() => {
-        // Set fixed dimensions to prevent layout shift
+        // Preserve layout to prevent jumping
         const originalHeight = element.offsetHeight
         const computedStyle = window.getComputedStyle(element)
         
-        element.style.height = originalHeight + 5 + 'px'
-        element.style.minHeight = originalHeight + 5 + 'px'
-        element.style.maxHeight = originalHeight + 'px'
-        element.style.overflow = 'hidden'
-        element.style.wordWrap = 'break-word'
-        element.style.display = 'block'
+        element.style.minHeight = originalHeight + 'px'
         element.style.lineHeight = computedStyle.lineHeight
+        element.style.wordWrap = 'break-word'
 
         const scramble = () => {
           element.textContent = originalText
@@ -99,9 +116,11 @@ export default {
 
           if (iteration >= originalText.length) {
             clearInterval(interval)
+            // Reset height after animation
+            element.style.minHeight = 'auto'
           }
 
-          iteration += 2.5 // Slower animation (was 1/3)
+          iteration += 2
         }
 
         // Start scramble effect when element comes into view
@@ -109,11 +128,11 @@ export default {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               iteration = 0
-              const interval = setInterval(scramble, 80) // Slower interval (was 30ms)
+              const interval = setInterval(scramble, 50)
               observer.unobserve(element)
             }
           })
-        })
+        }, { threshold: 0.3 })
 
         observer.observe(element)
       })
@@ -123,23 +142,6 @@ export default {
 </script>
 
 <style scoped>
-/* Custom animations */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* Hover effects for cards */
-.bg-gray-800\/40:hover {
-  background-color: rgba(31, 41, 55, 0.6);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
 /* Flower Decoration */
 .flower-decoration {
   width: 80px;
@@ -181,6 +183,7 @@ export default {
     20px 20px 0 0 #f0abfc;
 }
 
+/* Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -190,6 +193,7 @@ export default {
   }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .flower-decoration {
     width: 60px;
@@ -218,5 +222,33 @@ export default {
       -15px 15px 0 0 #e879f9,
       15px 15px 0 0 #f0abfc;
   }
+}
+
+@media (max-width: 640px) {
+  .flower-decoration {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .flower-decoration::before,
+  .flower-decoration::after {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Performance optimizations */
+.flower-decoration {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Content card enhancements */
+.bg-gray-800\/40 {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.bg-gray-800\/40:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 </style>
