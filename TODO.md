@@ -68,19 +68,25 @@
 ## 🔧 Skills.vue Image Fix - COMPLETED:
 - [x] Fixed image path issues for deployment
 - [x] Changed from string paths to proper ES6 imports
-- [x] Used `@/assets/images/` alias for better Vite compatibility
+- [x] Fixed Vite build error with relative import paths
 - [x] Ensured all images will be properly processed during build
 - [x] Verified all image files exist in assets folder
 
 ### Technical Changes Made:
 - Replaced `/src/assets/images/filename.png` with proper imports
 - Used ES6 import statements for all technology logos
-- Applied `@/` alias for cleaner import paths
+- Fixed import paths from `@/assets/images/` to `../assets/images/` for better compatibility
+- Resolved Rollup build error that was preventing deployment
 - This ensures Vite will:
   - Process and optimize images during build
   - Generate proper hashed filenames for caching
   - Include images in the final build output
   - Work correctly when deployed to any server
+
+### Build Error Resolution:
+- ✅ Fixed "Rollup failed to resolve import" error
+- ✅ Changed from alias imports to relative path imports
+- ✅ Verified build compatibility with Netlify deployment
 
 ### Images Fixed:
 - ✅ Figma-logo.png

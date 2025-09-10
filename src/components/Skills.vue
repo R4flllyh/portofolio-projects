@@ -54,16 +54,16 @@
 
 <script>
 // Import all images properly for Vite build process
-import FigmaLogo from '@/assets/images/Figma-logo.png'
-import GitLogo from '@/assets/images/git-logo.png'
-import JavaScriptLogo from '@/assets/images/javascript-logo.png'
-import HTMLLogo from '@/assets/images/HTML-logo.png'
-import CSSLogo from '@/assets/images/CSS-logo.png'
-import LaravelLogo from '@/assets/images/laravel-logo.png'
-import TailwindLogo from '@/assets/images/tailwind-logo.png'
-import FlutterLogo from '@/assets/images/Flutter-logo.png'
-import DartLogo from '@/assets/images/dart-logo.png'
-import WordPressLogo from '@/assets/images/Wordpress_Blue_logo.png'
+import FigmaLogo from '../assets/images/Figma-logo.png'
+import GitLogo from '../assets/images/git-logo.png'
+import JavaScriptLogo from '../assets/images/javascript-logo.png'
+import HTMLLogo from '../assets/images/HTML-logo.png'
+import CSSLogo from '../assets/images/CSS-logo.png'
+import LaravelLogo from '../assets/images/laravel-logo.png'
+import TailwindLogo from '../assets/images/tailwind-logo.png'
+import FlutterLogo from '../assets/images/Flutter-logo.png'
+import DartLogo from '../assets/images/dart-logo.png'
+import WordPressLogo from '../assets/images/Wordpress_Blue_logo.png'
 
 export default {
   name: 'Skills',
