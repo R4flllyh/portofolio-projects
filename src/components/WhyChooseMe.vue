@@ -86,7 +86,7 @@
             <p class="text-paragraph text-xs lg:text-sm opacity-80">
               North Jakarta, Jakarta Raya, Indonesia
             </p>
-            <div class="flex items-center gap-2 mt-2">
+            <div class="flex flex-wrap items-center gap-2 mt-2">
               <span class="text-xs bg-gray-700/50 px-2 py-1 rounded">Laravel</span>
               <span class="text-xs bg-gray-700/50 px-2 py-1 rounded">Filament</span>
               <span class="text-xs bg-gray-700/50 px-2 py-1 rounded">Frontend</span>
@@ -234,6 +234,10 @@ export default {
 .experience-item span {
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: normal; /* Allow wrapping */
+  word-break: break-word; /* Break long words */
+  max-width: 100%; /* Prevent overflow */
+  display: inline-block;
 }
 
 .experience-item:hover span {
