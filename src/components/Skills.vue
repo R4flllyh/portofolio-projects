@@ -53,6 +53,18 @@
 </template>
 
 <script>
+// Import all images properly for Vite build process
+import FigmaLogo from '@/assets/images/Figma-logo.png'
+import GitLogo from '@/assets/images/git-logo.png'
+import JavaScriptLogo from '@/assets/images/javascript-logo.png'
+import HTMLLogo from '@/assets/images/HTML-logo.png'
+import CSSLogo from '@/assets/images/CSS-logo.png'
+import LaravelLogo from '@/assets/images/laravel-logo.png'
+import TailwindLogo from '@/assets/images/tailwind-logo.png'
+import FlutterLogo from '@/assets/images/Flutter-logo.png'
+import DartLogo from '@/assets/images/dart-logo.png'
+import WordPressLogo from '@/assets/images/Wordpress_Blue_logo.png'
+
 export default {
   name: 'Skills',
   data() {
@@ -60,61 +72,61 @@ export default {
       technologies: [
         {
           name: 'Figma',
-          image: '/src/assets/images/Figma-logo.png',
+          image: FigmaLogo,
           hoverColor: 'hover:border-purple-400/60',
           overlayColor: 'from-purple-500/10'
         },
         {
           name: 'Git',
-          image: '/src/assets/images/git-logo.png',
+          image: GitLogo,
           hoverColor: 'hover:border-orange-400/60',
           overlayColor: 'from-orange-500/10'
         },
         {
           name: 'JavaScript',
-          image: '/src/assets/images/javascript-logo.png',
+          image: JavaScriptLogo,
           hoverColor: 'hover:border-yellow-400/60',
           overlayColor: 'from-yellow-500/10'
         },
         {
           name: 'HTML',
-          image: '/src/assets/images/HTML-logo.png',
+          image: HTMLLogo,
           hoverColor: 'hover:border-orange-400/60',
           overlayColor: 'from-orange-500/10'
         },
         {
           name: 'CSS',
-          image: '/src/assets/images/CSS-logo.png',
+          image: CSSLogo,
           hoverColor: 'hover:border-blue-400/60',
           overlayColor: 'from-blue-500/10'
         },
         {
           name: 'Laravel',
-          image: '/src/assets/images/laravel-logo.png',
+          image: LaravelLogo,
           hoverColor: 'hover:border-red-400/60',
           overlayColor: 'from-red-500/10'
         },
         {
           name: 'Tailwind CSS',
-          image: '/src/assets/images/tailwind-logo.png',
+          image: TailwindLogo,
           hoverColor: 'hover:border-cyan-400/60',
           overlayColor: 'from-cyan-500/10'
         },
         {
           name: 'Flutter',
-          image: '/src/assets/images/Flutter-logo.png',
+          image: FlutterLogo,
           hoverColor: 'hover:border-blue-400/60',
           overlayColor: 'from-blue-500/10'
         },
         {
           name: 'Dart',
-          image: '/src/assets/images/dart-logo.png',
+          image: DartLogo,
           hoverColor: 'hover:border-blue-400/60',
           overlayColor: 'from-blue-500/10'
         },
         {
           name: 'WordPress',
-          image: '/images/Wordpress_Blue_logo.png',
+          image: WordPressLogo,
           hoverColor: 'hover:border-blue-500/60',
           overlayColor: 'from-blue-600/10'
         }
