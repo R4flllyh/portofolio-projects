@@ -118,12 +118,10 @@
   }
 
   #services {
-    background-image: 
-      url('/src/assets/images/linear-gradient.png'),
-      url('/src/assets/images/Icosahedron.png');
-    background-size: contain, 300px;   /* ukuran masing-masing image */
-    background-position: bottom left, top right; /* posisi masing-masing image */
-    background-repeat: no-repeat, no-repeat;  /* repeat untuk masing-masing */
+    background-image: url('/src/assets/images/Icosahedron.png');
+    background-size: 300px;   /* ukuran masing-masing image */
+    background-position: top right; /* posisi masing-masing image */
+    background-repeat: no-repeat;  /* repeat untuk masing-masing */
   }
 
   .helix {
@@ -134,9 +132,9 @@
   }
 
   .helix-2 {
-    background-image: url('/src/assets/images/Cylinder.png');
+    background-image: url('/src/assets/images/Thorus-Knot.png'),url('/src/assets/images/Cylinder.png');
     background-size: 300px;
-    background-position: bottom right;
+    background-position: top left, bottom right;
     background-repeat: no-repeat;
   }
   .helix-3 {
