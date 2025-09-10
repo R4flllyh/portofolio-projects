@@ -114,7 +114,7 @@ export default {
         },
         {
           name: 'WordPress',
-          image: '/src/assets/images/Wordpress_Blue_logo.png',
+          image: '/images/Wordpress_Blue_logo.png',
           hoverColor: 'hover:border-blue-500/60',
           overlayColor: 'from-blue-600/10'
         }
