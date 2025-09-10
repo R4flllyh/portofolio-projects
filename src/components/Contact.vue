@@ -1,6 +1,6 @@
 <template>
-  <section id="contact" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center helix-3">
-    <div class="w-full min-w-2xl max-w-7xl">
+  <section id="contact" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center helix-3 overflow-hidden">
+    <div class="w-full max-w-7xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16" ref="header">
         <h2 class="text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 bg-gradient-to-r from-button to-illustration-highlight bg-clip-text text-transparent">

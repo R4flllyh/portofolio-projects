@@ -1,16 +1,16 @@
 <template>
-  <section id="projects" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center projects-section helix-2">
-    <div class="w-full min-w-2xl max-w-7xl">
+  <section id="projects" class="section-padding bg-background text-headline px-4 py-16 md:py-24 flex justify-center projects-section helix-2 overflow-hidden">
+    <div class="w-full max-w-7xl mx-auto">
       <!-- Section Header -->
-      <div class="mb-12 md:mb-16 flex items-center gap-10" ref="header">
-        <h2 class="text-xl md:text-4xl font-normal font-mono text-headline">
+      <div class="mb-12 md:mb-16 flex items-center gap-6 md:gap-10 overflow-hidden" ref="header">
+        <h2 class="text-xl md:text-4xl font-normal font-mono text-headline flex-shrink min-w-0">
           04 - My Projects
         </h2>
         <img 
-          id="scramble-cursor" 
           src="https://assets.codepen.io/16327/scramble-cursor.png" 
           alt="Decorative cursor" 
-          class="w-14 object-contain animate-pulse" 
+          class="w-12 md:w-14 object-contain animate-pulse flex-shrink-0" 
+          loading="lazy"
         />
       </div>
 

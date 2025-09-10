@@ -6,16 +6,16 @@
       <!-- Mobile Layout: Stack everything vertically -->
       <div class="block lg:hidden">
         <!-- Decorative Element -->
-        <div class="flex mb-1 mt-20 gap-4 items-center">
-          <h1 class="text-6xl sm:text-4xl font-extrabold text-headline leading-tight text-start" ref="helloText">
+        <div class="flex mb-1 mt-20 gap-4 items-center overflow-hidden">
+          <h1 class="text-6xl sm:text-5xl font-extrabold text-headline leading-tight text-start flex-shrink min-w-0" ref="helloText">
             <span class="letter" v-for="(letter, index) in helloLetters" :key="index">{{ letter }}</span>
           </h1>
-          <img src="/src/assets/images/element.png" class="w-16 h-16 sm:w-20 sm:h-20 object-contain animate-spin-slow" alt="Decorative Element">
+          <img :src="elementImage" class="w-16 h-16 sm:w-20 sm:h-20 object-contain animate-spin-slow flex-shrink-0" alt="Decorative Element">
         </div>
         
         <!-- Name Text -->
-        <div class="mb-6">
-          <h1 class="text-7xl sm:text-6xl font-extrabold text-headline leading-tight text-start" ref="nameText">
+        <div class="mb-6 overflow-hidden">
+          <h1 class="text-6xl sm:text-6xl font-extrabold text-headline leading-tight text-start min-w-0" ref="nameText">
             <span class="letter" v-for="(letter, index) in nameLetters" :key="index">{{ letter }}</span>
           </h1>
         </div>
@@ -40,22 +40,22 @@
       </div>
 
       <!-- Desktop Layout: Original design preserved -->
-      <div class="hidden lg:block">
+      <div class="hidden lg:block overflow-hidden">
         <!-- First Row: Hello Text and Decorative Element -->
-        <div class="flex gap-20 items-center mb-0">
-          <div class="flex-1">
-            <h1 class="text-[140px] xl:text-[190px] font-extrabold text-headline leading-tight" ref="helloText">
+        <div class="flex gap-8 xl:gap-20 items-center mb-0 overflow-hidden">
+          <div class="flex-1 min-w-0">
+            <h1 class="text-[120px] xl:text-[140px] 2xl:text-[190px] font-extrabold text-headline leading-tight" ref="helloText">
               <span class="letter" v-for="(letter, index) in helloLetters" :key="index">{{ letter }}</span>
             </h1>
           </div>
           <div class="flex-shrink-0">
-            <img src="/src/assets/images/element.png" class="w-32 h-32 object-contain animate-spin-slow" alt="Decorative Element">
+            <img :src="elementImage" class="w-32 h-32 object-contain animate-spin-slow" alt="Decorative Element">
           </div>
         </div>
         
         <!-- Second Row: Content and Name -->
-        <div class="flex items-end gap-20 mt-8">
-          <div class="flex-1">
+        <div class="flex items-end gap-8 xl:gap-20 mt-8 overflow-hidden">
+          <div class="flex-1 min-w-0">
             <h2 class="text-xl font-semibold mb-4 text-secondBackground" ref="subheadline">
               A Software Engineer passionate about building modern and scalable web applications.
             </h2>
@@ -71,8 +71,8 @@
               </button>
             </div>
           </div>
-          <div class="flex-shrink-0">
-            <h1 class="text-[160px] xl:text-[210px] font-extrabold text-headline leading-tight text-end" ref="nameText">
+          <div class="flex-shrink-0 min-w-0">
+            <h1 class="text-[140px] xl:text-[160px] 2xl:text-[210px] font-extrabold text-headline leading-tight text-end" ref="nameText">
               <span class="letter" v-for="(letter, index) in nameLetters" :key="index">{{ letter }}</span>
             </h1>
           </div>
@@ -83,12 +83,16 @@
 </template>
 
 <script>
+// Import element image for proper asset handling
+import elementImage from '../assets/images/element.png'
+
 export default {
   name: 'Hero',
   data() {
     return {
       helloLetters: "HELLO, I'M".split(''),
-      nameLetters: "RAFLY".split('')
+      nameLetters: "RAFLY".split(''),
+      elementImage
     }
   },
   mounted() {
